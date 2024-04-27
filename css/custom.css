@@ -88,3 +88,17 @@ ul.__rating li {
     position: absolute;
     right: 15px;
 }
+
+/* Nayem */
+ul.job-overview {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+ul.__job-overview li {
+    background: #e5e5ff;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    padding: 5px;
+}

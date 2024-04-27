@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>learner</title>
+
+  <!-- Stylesheets -->
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+
+
+  <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+  <link rel="icon" href="images/favicon.png" type="image/x-icon">
+
+  <!-- Responsive -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+  <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+
+
+  <style>
+    @font-face {
+      font-family: 'Jersey 15';
+      src: url('fonts/Jersey_15/Jersey15-Regular.ttf') format('truetype');
+      /* Specify the path to your font file */
+    }
+
+    .jersey-15-regular {
+      font-family: 'Jersey 15', Arial, sans-serif;
+      /* Specify the font family with fallbacks */
+      font-size: 60pt;
+      color: #9a2464;
+    }
+
+
+    @font-face {
+      font-family: 'Verdana, arial, helvetica, clean, sans-serif';
+      src: local('Verdana'), local('Arial'), local('Helvetica'), local('clean'), local('sans-serif');
+    }
+
+    .conlist {
+      color: rgba(255, 85, 0, 0.986);
+    }
+
+    .conlist:hover {
+      color: rgba(47, 42, 39, 0.986);
+    }
+
+    .course-detail {
+      padding-top: 50px;
+      /* padding-bottom: 30px;
+  max-width: 1024px;
+  margin: 0 auto; */
+    }
+
+    ul.list-type {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+    }
+
+    ul.list-type li {
+      margin-right: 15px;
+    }
+
+    ul.list-type li a {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      color: #777;
+      font-weight: 200;
+      font-size: 12px;
+    }
+
+    ul.list-type li a .text {
+      font-size: 12px;
+    }
+
+    .left-content-wrap h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      line-height: normal;
+    }
+
+    .img-wrap {
+      width: 100%;
+      height: auto;
+      overflow: hidden;
+      margin-bottom: 15px;
+    }
+
+    .img-wrap img {
+      width: 100%;
+      height: 310px;
+    }
+
+    ul.list-col-type li {
+      border-bottom: 1px solid #eee;
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 13px;
+      line-height: large;
+      gap: 15px;
+    }
+  </style>
+</head>
+
+<style>
+  .non-active-chap-border {
+    border-bottom: 1px solid #d0deef;
+    margin: 15px 0 16px;
+  }
+</style>
+
+<body>
+
+  <div class="page-wrapper">
+
+    <!-- Preloader -->
+    <!-- <div class="preloader"></div> -->
+
+    <!-- Header Span -->
+    <span class="header-span"></span>
+
+    <!-- Main Header-->
+    <header class="main-header">
+
+      <!-- Main box -->
+      <div class="main-box">
+        <!--Nav Outer -->
+        <div class="nav-outer">
+          <div class="logo-box" style="margin-left: 50px;">
+            <div class="logo"><a href="index.html"><img style="height: 40px;" src="images/logo8.png" alt=""
+                  title=""></a></div>
+          </div>
+
+          <nav class="nav main-menu" style="margin-left: 100px;">
+            <ul class="navigation" id="navbar">
+              <li class="dropdown">
+                <span>LEARNING</span>
+              </li>
+
+              <li class="dropdown has-mega-menu" id="has-mega-menu">
+                <span>SUBJECT</span>
+              </li>
+              <li>
+                <span>ASSESSMENT</span>
+              </li>
+              <li>
+                <a href="dashboard.html"><span>PARENT</span></a>
+              </li>
+            </ul>
+          </nav>
+          <!-- Main Menu End-->
+        </div>
+
+        <div class="outer-box">
+
+
+          <!-- Login/Register -->
+          <div class="btn-box">
+            <a href="login-popup.html" class="theme-btn btn-style-six call-modal"
+              style="color: black; font-size:18px">Login</a>
+            <a href="login-popup.html" class="theme-btn btn-style-six call-modal"
+              style="color: black; font-size:18px">Signup</a>
+            <!-- <a href="dashboard-post-job.html" class="theme-btn btn-style-two"><span class="btn-title">Signup</span></a> -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Header -->
+      <div class="mobile-header">
+        <div class="logo"><a href="index.html"><img src="images/logo8.png" alt="" title=""></a></div>
+
+        <!--Nav Box-->
+        <div class="nav-outer clearfix">
+
+          <div class="outer-box">
+            <!-- Login/Register -->
+            <div class="login-box">
+              <a href="login-popup.html" class="call-modal"><span class="icon-user"></span></a>
+            </div>
+
+            <a href="#nav-mobile" class="mobile-nav-toggler"><span class="flaticon-menu-1"></span></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Nav -->
+      <div id="nav-mobile"></div>
+    </header>
+    <!--End Main Header -->
+
+    <!--Page Title-->
+    <section class="page-title">
+      <div class="auto-container">
+        <div class="row">
+
+
+          <div class="title-outer col-lg-10 pt-3">
+            <h1 class="text-left jersey-15-regular" style="font-size: 60pt; color: #9a2464;">Course Details</h1>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!--End Page Title-->
+
+
+
+
+    <!-- Job Section -->
+    <section class="job-section-five style-two">
+      <div class="auto-container">
+        <div class="row wow fadeInUp">
+
+          <div class="default-tabs style-two tabs-box">
+
+
+            <div class="course-detail">
+              <div class="row justify-content-between g-3">
+                <div class="col-sm-8 course-left-bar">
+                  <div class="left-content-wrap">
+                    <h3>Astrophotography: CAPTURING THE COSMOS</h3>
+                    <ul class="list-type">
+                      <li>
+                        <a href="">
+                          <span class="fa fa-clock"></span>
+                          <div class="text">
+                            June 14, 2024
+                          </div>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="">
+                          <span class="fa fa-play" style="color: green"></span>
+                          <div class="text">Online</div>
+                        </a>
+                      </li>
+
+                      <li>
+                        <a>
+                          <div class="text">
+                            <b>Instructor: </b>
+                            <span>
+                              <i>Master Sarah Lee</i></span>
+                          </div>
+                        </a>
+                      </li>
+                    </ul>
+                    <div class="img-wrap">
+                      <img class="rounded"
+                        src="data:image/jpeg;base64,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"
+                        alt="" />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4 course-right-bar">
+                  <div class="right-content-wrap">
+                    <br />
+                    <div class="card p-3" style="height: auto;">
+                      <ul class="list-col-type mb-3">
+                        <li>
+                          <strong>Item price: </strong>
+                          <span>&dollar;50</span>
+                        </li>
+                        <li>
+                          <strong>Study method: </strong>
+                          <span>Offline</span>
+                        </li>
+                        <li>
+                          <strong>Duration: </strong>
+                          <span>36</span>
+                        </li>
+                        <li>
+                          <strong>Course Covered: </strong>
+                          <span>Astrophotography</span>
+                        </li>
+                        <li>
+                          <strong>You Can Learn: </strong>
+                          <span>Basic Astrophotography Concepts, Tracking</span>
+                        </li>
+                        <li>
+                          <strong>Course For: </strong>
+                          <span>Beginner level</span>
+                        </li>
+
+                        <li>
+                          <strong>Updated: </strong>
+                          <span>Today</span>
+                        </li>
+                      </ul>
+
+                      <div class="d-grid">
+                        <button class="btn btn-primary" type="button">
+                          Pay & Enroll Now
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- NEW TAB UI -->
+              <div class="auto-container" style=" padding-top: 1%;">
+                <div class="row wow fadeInUp">
+                  <div class="default-tabs style-two tabs-box">
+                    <!--Tabs Box-->
+                    <ul class="tab-buttons clearfix">
+                      <li class="tab-btn active-btn" data-tab="#Overview"> Overview</li>
+                      <li class="tab-btn" data-tab="#Description"> Description</li>
+                      <li class="tab-btn" data-tab="#Eligibility"> Eligibility</li>
+                      <li class="tab-btn" data-tab="#Qualification"> Qualification</li>
+                      <!-- <li class="tab-btn" data-tab="#CareerPath"> Career Path</li> -->
+                      <li class="tab-btn" data-tab="#Instructor"> Instructor</li>
+                    </ul>
+
+                    <div class="tabs-content">
+                      <!--Tab-->
+                      <div class="tab active-tab" id="Overview">
+                        This course is designed to take you on a journey into the world of astrophotography,
+                        transforming your night sky viewing into stunning celestial captures. Whether you're a complete
+                        beginner or have some basic photography experience, this course will equip you with the
+                        knowledge and skills to photograph the wonders of the cosmos.
+
+                        Here's a glimpse of what you'll explore:
+
+                        The Fundamentals: We'll begin by unraveling the basics of astrophotography. You'll understand
+                        the different types (nightscapes, deep space objects, etc.) and the equipment needed to embark
+                        on this exciting adventure.
+
+                        Mastering Your Camera: Delve into the world of camera settings crucial for astrophotography.
+                        We'll conquer concepts like aperture, shutter speed, ISO, and white balance, allowing you to
+                        take control and optimize your camera for capturing celestial objects.
+
+                        Celestial Navigation: Learn to navigate the night sky with confidence. We'll explore star
+                        charts, astrophotography apps, and the equatorial coordinate system, making it easy to locate
+                        and track your desired celestial targets.
+
+                        Gearing Up: The course will guide you through selecting the perfect camera, lens, and tripod for
+                        your astrophotography needs. We'll also explore additional equipment like remote shutter
+                        releases and equatorial mounts that can further enhance your astrophotography experience.
+
+                        The Art of Image Processing: Transform your raw captures into breathtaking images! Learn how to
+                        use image processing software to reduce noise, stack images for improved detail, and apply color
+                        correction and sharpening techniques.
+
+                        Planning Your Masterpiece: Discover the secrets of successful astrophotography planning. We'll
+                        delve into choosing the ideal time and location, considering factors like weather conditions,
+                        light pollution, and moon phases to maximize your chances of capturing stunning
+                        astrophotography.
+                      </div>
+                      <!--Tab-->
+                      <div class="tab" id="Description">
+                        This astrophotography course is your chance to transform fleeting celestial moments into
+                        captivating photographs. Whether you're a complete astronomy novice or a curious photographer,
+                        this course will equip you with the knowledge and skills to transform your night sky viewing
+                        into stunning astrophotographic art.
+
+                        Here's what you'll learn:
+
+                        The Fundamentals of Astrophotography: Grasp the essential concepts of astrophotography,
+                        including the different areas (nightscapes, deep sky objects, etc.) and the equipment you'll
+                        need to get started on your cosmic photography journey.
+                        Camera Settings Demystified: Unlock the secrets of camera settings crucial for astrophotography.
+                        Master concepts like aperture, shutter speed, ISO, and white balance to take control of your
+                        camera and optimize it for capturing the faint wonders of the universe.
+                        Navigate the Night Sky: Learn to confidently navigate the vast expanse of the night sky. Explore
+                        star charts, astrophotography apps, and the equatorial coordinate system, empowering you to
+                        locate and track your desired celestial targets with ease.
+                        This course goes beyond the theory, providing practical guidance on:
+
+                        Choosing the Right Gear: We'll guide you through selecting the perfect camera, lens, and tripod
+                        to suit your astrophotography needs. Explore additional equipment options like remote shutter
+                        releases and equatorial mounts to further elevate your astrophotography experience.
+                        Image Processing Techniques: Discover the magic of transforming your raw captures into
+                        breathtaking astrophotography. Learn to use image processing software to reduce noise, stack
+                        images for improved detail, and apply color correction and sharpening techniques to bring out
+                        the true colors and brilliance of your celestial subjects.
+                        Planning for Astrophotographic Success: Learn the secrets of successful astrophotography
+                        planning. We'll delve into choosing the ideal time and location, considering factors like
+                        weather conditions, light pollution, and moon phases to maximize your chances of capturing
+                        stunning astrophotography.
+                        By the end of this course, you'll be equipped to:
+
+                        Set up your camera for astrophotography.
+                        Capture stunning images of celestial objects, from planets and moons to galaxies and nebulae.
+                        Process your astrophotography images to create awe-inspiring visuals that showcase the true
+                        beauty of the cosmos.
+                      </div>
+                      <!--Tab-->
+                      <div class="tab" id="Eligibility">
+                        Any One
+                      </div>
+                      <!--Tab-->
+                      <div class="tab" id="Qualification">
+                        Any One
+                      </div>
+                      <!--Tab-->
+                      <!-- <div class="tab" id="CareerPath">
+
+                      </div> -->
+                      <!--Tab-->
+                      <div class="tab" id="Instructor">
+                        <br />
+                        <div class="card p-3" style="height: auto;">
+                          <ul class="list-col-type mb-3">
+                            <li>
+                              <img style="width: 100px; height: 100px; border-radius: 50%"
+                                src="https://secure.gravatar.com/avatar/d3ecc3902ac3fc1d575dfb08651f410e?s=500&d=blank&r=g" />
+                            </li>
+                            <li>
+                              <span>
+                                <h6>Name</h6>
+                                <h5>Master Sarah Lee</h5>
+                              </span>
+                            </li>
+
+                            <li>
+                              <span>
+                                <h6>Bio</h6>
+                                1. Sarah Lee Lippincott (1920-2019): She was a distinguished American astronomer. Her
+                                expertise was in astrometry, a field that uses precise measurements of the positions and
+                                motions of stars. She made significant contributions to our understanding of binary
+                                stars and the search for exoplanets (planets outside our solar system).
+                                <br>
+                                2. Sarah Lee Lippincott Zimmerman (same person as above): She was also known by this
+                                name
+                                after marrying Dave Garroway, the host of the "Today Show" in its early years.
+                              </span>
+                            </li>
+                            <li>
+                              <span>
+                                <h6>Qualifications</h6>
+                                Brigham Young University
+                                MBA, Organizational Behavior / Human Resource Management
+                                2005 - 2007
+                                <br>
+                                Utah Valley University
+                                BS, Business Management
+                                1999 - 2002
+                              </span>
+                            </li>
+                          </ul>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+    </section>
+    <!-- End Job Section -->
+    <section class="top-companies style-three">
+      <div class="auto-container">
+        <div class="left-content-wrap">
+          <h3>More Courses For You!</h3>
+        </div>
+
+        <div class="carousel-outer wow fadeInUp">
+          <div class="companies-carousel-two owl-carousel owl-theme default-dots">
+            <div class="company-block">
+              <div class="inner-box" style="background-color: #e5e5ff;">
+                <!-- <img src="images/resource/1.jpeg" alt=""> -->
+                <div><span style="font-family: 'Jost', sans-serif;font-weight: bolder; font-size: 12pt;">Facebook
+                    Marketing</span></div>
+                <br>
+                <div><span style="font-family: 'Jost', sans-serif;font-weight: normal; font-size: 10pt;">Total Enrolled
+                    10693<br>
+                    Full Course · Required 25 hours</span></div>
+              </div>
+            </div>
+            <div class="company-block">
+              <div class="inner-box" style="background-color: #e5f2e5;">
+                <!-- <img src="images/resource/1.jpeg" alt=""> -->
+                <div><span style="font-family: 'Jost', sans-serif;font-weight: bolder; font-size: 12pt;">Microsoft
+                    Excel</span></div>
+                <br>
+                <div><span style="font-family: 'Jost', sans-serif;font-weight: normal; font-size: 10pt;">Total Enrolled
+                    10090<br>
+                    Full Course · Required 4 hours</span></div>
+              </div>
+            </div>
+            <div class="company-block">
+              <div class="inner-box"
+                style="background: linear-gradient(90deg, rgba(223, 213, 223, 1) 0%, rgba(207, 230, 233, 1) 50%, rgba(233, 233, 205, 1) 100%);">
+                <!-- <img src="images/resource/1.jpeg" alt=""> -->
+                <div><span style="font-family: 'Jost', sans-serif;font-weight: bolder; font-size: 12pt;">News
+                    Presentation</span></div>
+                <br>
+                <div><span style="font-family: 'Jost', sans-serif;font-weight: normal; font-size: 10pt;">Total Enrolled
+                    4660 <br>
+                    Videos · Required 3 hours</span></div>
+              </div>
+            </div>
+            <div class="company-block">
+              <div class="inner-box" style="background-color: #fdecea;">
+                <!-- <img src="images/resource/1.jpeg" alt=""> -->
+                <div><span style="font-family: 'Jost', sans-serif;font-weight: bolder; font-size: 12pt;">Microsoft
+                    PowerPoint</span></div>
+                <br>
+                <div><span style="font-family: 'Jost', sans-serif;font-weight: normal; font-size: 10pt;">Total Enrolled
+                    18026<br>
+                    Full Course · Required 8 hours</span></div>
+              </div>
+            </div>
+            <div class="company-block">
+              <div class="inner-box"
+                style="background: linear-gradient(90deg, rgba(189, 189, 253, 1) 0%, rgba(175, 210, 175, 1) 100%);">
+                <!-- <img src="images/resource/1.jpeg" alt=""> -->
+                <div><span style="font-family: 'Jost', sans-serif;font-weight: bolder; font-size: 12pt;">Personal
+                    Fitness</span></div>
+                <br>
+                <div><span style="font-family: 'Jost', sans-serif;font-weight: normal; font-size: 10pt;">Total Enrolled
+                    3220<br>
+                    Full Course · Required 9 hours</span></div>
+              </div>
+            </div>
+            <div class="company-block">
+              <div class="inner-box">
+                <!-- <img src="images/resource/1.jpeg" alt=""> -->
+                <div><span style="font-family: 'Jost', sans-serif;font-weight: bolder; font-size: 12pt;">Study
+                    Smart</span></div>
+                <br>
+                <div><span style="font-family: 'Jost', sans-serif;font-weight: normal; font-size: 10pt;">Total Enrolled
+                    542<br>
+                    Short Course · Required 2 hours</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+    <!-- Listing Section -->
+    <!-- <section class="ls-section">
+      <div class="auto-container">
+        <div class="filters-backdrop"></div>
+
+        <div class="row">
+          
+          <div class="content-column col-lg-12">
+            <div class="ls-outer">
+             
+
+                    <div class="title-outer pb-4">
+                      <h3 class="text-center">Subject</h3>
+                      <p class="text-center">Step-by-step paths to mastery</p>
+                      
+                    </div>
+                    
+
+              <div class="row">
+                
+                <div class="candidate-block-four col-lg-4 col-md-6 col-sm-12">
+                  <div class="inner-box">
+                    
+                    <div class="image-box">
+                      <figure class="image"><img src="images/resource/news-2.jpg" alt="" /></figure>
+                    </div>
+
+                    <div style="padding: 20px;">
+                    <h3 class="name"><a href="#">Math</a></h3>
+                    <span class="cat">UI Designer</span>
+                    <ul class="job-info">
+                      <li><span class="icon flaticon-map-locator"></span> London, UK</li>
+                      <li><span class="icon flaticon-money"></span> $99 / hour</li>
+                    </ul>
+                    
+                    <a href="#" class="theme-btn btn-style-three">Start</a>
+
+                  </div>
+                  </div>
+                </div> 
+
+
+                
+           
+              <nav class="ls-pagination">
+                <ul>
+                  <li class="prev"><a href="#"><i class="fa fa-arrow-left"></i></a></li>
+                  <li><a href="#">1</a></li>
+                  <li><a href="#" class="current-page">2</a></li>
+                  <li><a href="#">3</a></li>
+                  <li class="next"><a href="#"><i class="fa fa-arrow-right"></i></a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+    <!--End Listing Page Section -->
+
+    <!-- Main Footer -->
+    <footer class="main-footer alternate5">
+      <div class="auto-container">
+        <!--Widgets Section-->
+        <div class="widgets-section">
+          <div class="row">
+            <div class="big-column col-xl-4 col-lg-3 col-md-12">
+              <div class="footer-column about-widget">
+                <div class="logo"><a href="#"><img style="height: 50px;" src="images/logo8.png" alt=""></a></div>
+                <p class="phone-num"><span>Call us </span><a href="thebeehost@support.com">123 456 7890</a></p>
+                <p class="address">Level 6, Islam Tower, 464/H DIT Rd,<br> Dhaka 1219 <br><a
+                    href="mailto:support@superio.com" class="email">support@learner.com</a></p>
+              </div>
+            </div>
+
+            <div class="big-column col-xl-8 col-lg-9 col-md-12">
+              <div class="row">
+                <div class="footer-column col-lg-3 col-md-6 col-sm-12">
+                  <div class="footer-widget links-widget">
+                    <h4 class="widget-title">For student</h4>
+                    <div class="widget-content">
+                      <ul class="list">
+                        <li><a href="#">Practice lesson</a></li>
+                        <li><a href="#">Practice MCQ</a></li>
+                        <li><a href="#">Quick MCQ</a></li>
+                        <li><a href="#">Exam</a></li>
+
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="footer-column col-lg-3 col-md-6 col-sm-12">
+                  <div class="footer-widget links-widget">
+                    <h4 class="widget-title">What we offer</h4>
+                    <div class="widget-content">
+                      <ul class="list">
+                        <li><a href="#">Math</a></li>
+                        <li><a href="#">Science</a></li>
+                        <li><a href="#">English</a></li>
+                        <li><a href="#">Bangla</a></li>
+                        <li><a href="#">Social Science</a></li>
+                        <li><a href="#">Skill</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="footer-column col-lg-3 col-md-6 col-sm-12">
+                  <div class="footer-widget links-widget">
+                    <h4 class="widget-title">About Us</h4>
+                    <div class="widget-content">
+                      <ul class="list">
+
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="footer-column col-lg-3 col-md-6 col-sm-12">
+                  <div class="footer-widget links-widget">
+                    <h4 class="widget-title">Helpful Resources</h4>
+                    <div class="widget-content">
+                      <ul class="list">
+
+                        <li><a href="#">Terms of Use</a></li>
+                        <li><a href="#">Privacy Center</a></li>
+                        <li><a href="#">Security Center</a></li>
+
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!--Bottom-->
+      <div class="footer-bottom">
+        <div class="auto-container">
+          <div class="outer-box">
+            <div class="copyright-text">© 2021 <a href="#">learner</a>. All Right Reserved.</div>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll To Top -->
+      <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
+    </footer>
+    <!-- End Main Footer -->
+
+
+  </div><!-- End Page Wrapper -->
+
+
+  <div style="background-image: url(images/resource/company-logo/3-1.png);"></div>
+
+  <script src="js/jquery.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/jquery-ui.min.js"></script>
+  <script src="js/chosen.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.fancybox.js"></script>
+  <script src="js/jquery.modal.min.js"></script>
+  <script src="js/mmenu.polyfills.js"></script>
+  <script src="js/mmenu.js"></script>
+  <script src="js/appear.js"></script>
+  <script src="js/ScrollMagic.min.js"></script>
+  <script src="js/rellax.min.js"></script>
+  <script src="js/owl.js"></script>
+  <script src="js/wow.js"></script>
+  <script src="js/script.js"></script>
+  <!-- Maps -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDaaCBm4FEmgKs5cfVrh3JYue3Chj1kJMw"></script>
+  <script src="js/infobox.min.js"></script>
+  <script src="js/markerclusterer.js"></script>
+  <script src="js/maps.js"></script>
+</body>
+
+</html>

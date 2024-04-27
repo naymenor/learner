@@ -60,3 +60,18 @@ ul.__tags li {
     font-weight: 500;
     margin-top: 15px;
 }
+
+.tutor-info {
+    border: 1px solid #00800038;
+    padding: 10px;
+    border-radius: 3px;
+    background: #34a8530f;
+}
+
+ul.__rating {
+    font-size: 12px;
+}
+
+ul.__rating li {
+    margin-right: 4px;
+}

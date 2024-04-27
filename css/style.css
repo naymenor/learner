@@ -1575,7 +1575,30 @@ Accordian Box
   background: transparent;
   cursor: pointer;
   transition: all 300ms ease;
+  
 }
+
+
+.acc-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 70px; /* Adjust as needed */
+  height: 100%;
+  background-color: #0b863c;
+  z-index: -1; /* Ensure the pseudo-element is behind the text */
+  
+  border-top-right-radius: 10px; /* Adjust the value as needed */
+  border-bottom-right-radius: 10px; /* Adjust the value as needed */
+}
+
+
+.non-active-chap-border {
+    border-bottom: 1px solid #d0deef;
+    margin: 15px 0 16px;
+}
+
 
 .accordion-box .block.active-block {
   box-shadow: 0px 6px 15px rgba(64, 79, 104, 0.05);
@@ -1589,9 +1612,9 @@ Accordian Box
   width: 70px;
   line-height: 70px;
   text-align: center;
-  color: #2F2D51;
+  color: #ffffff;
   font-size: 15px;
-  font-weight: 700;
+  font-weight: 1000;
   transition: all 300ms ease;
 }
 
@@ -9732,7 +9755,7 @@ Section Title
 
 .sec-title {
   position: relative;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 
 .sec-title .sub-title {
@@ -23428,20 +23451,22 @@ Work Section
 .completed {
   position: relative;
   font-size: 13px;
-  padding: 5px 20px;
+  padding: 4px 20px;
   line-height: 15px;
-  color: #D93025;
+  color: #ffffff;
   font-weight: 500;
-  border-radius: 20px;
-  background: rgba(217, 48, 37, 0.15);
+  border-radius: 18px;
+  background: #0b863c;
   color: #d93025;
+  margin-left: 10px
 }
 
 
 
 /* Active state for accordion button */
 .accordion.block.active .acc-btn {
-  background-color: #e0e0e0; /* Change background color when accordion is active */
+  background-color: #0b863c; /* Change background color when accordion is active */
+  color: #fff;
 }
 
 /* Active state for accordion content */

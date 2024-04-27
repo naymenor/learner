@@ -75,3 +75,12 @@ ul.__rating {
 ul.__rating li {
     margin-right: 4px;
 }
+
+.search-box {
+    max-width: 858px;
+}
+
+.active-student {
+    position: absolute;
+    right: 15px;
+}

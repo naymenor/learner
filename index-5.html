@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Learning Application</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<style>
+  .conlist {
+    color: black; /* Default color */
+  }
+  
+  .conlist.completed {
+    color: red; /* Color for completed topics */
+  }
+  
+</style>
+<body>
+
+<ol class="list-group-numbered">
+  <li><a class="conlist" href="#topic1">Wtrated?</a></li>
+  <li><a class="conlist" href="#topic2">Conver and decimals</a></li>
+  <li><a class="conlist" href="#topic3">Compareand decimals</a></li>
+  <li><a class="conlist" href="#topic4">Ents of numbers</a></li>
+</ol>
+
+<script>
+
+  document.addEventListener("DOMContentLoaded", function() {
+  var links = document.querySelectorAll(".conlist");
+
+  // Check local storage for completed topics
+  var completedTopics = JSON.parse(localStorage.getItem("completedTopics")) || {};
+
+  links.forEach(function(link) {
+    var topic = link.getAttribute("href"); // Get the href attribute
+
+    // Apply completed class to completed topics
+    if (completedTopics[topic]) {
+      link.classList.add("completed");
+    }
+
+    link.addEventListener("click", function(event) {
+      event.preventDefault(); // Prevent the default link behavior
+
+      // Toggle completion status
+      if (!completedTopics[topic]) {
+        completedTopics[topic] = true;
+        localStorage.setItem("completedTopics", JSON.stringify(completedTopics));
+        this.classList.add("completed");
+      }
+    });
+  });
+});
+
+</script>
+
+<script src="scripts.js"></script>
+</body>
+</html>

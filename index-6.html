@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Learning Application</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<style>
+  .conlist {
+    color: black; /* Default color */
+  }
+  
+  .conlist.completed {
+    color: red; /* Color for completed topics */
+  }
+</style>
+<body>
+
+<ol class="list-group-numbered">
+  <li><a class="conlist" href="#topic1">What percentage is illustrated?</a></li>
+  <li><a class="conlist" href="#topic2">Convert between percents, fractions, and decimals</a></li>
+  <li><a class="conlist" href="#topic3">Compare percents to fractions and decimals</a></li>
+  <li><a class="conlist" href="#topic4">Estimate percents of numbers</a></li>
+  <li><a class="conlist" href="#topic5">Topic 5</a></li>
+  <li><a class="conlist" href="#topic6">Topic 6</a></li>
+  <!-- Add more topics -->
+  <li><a class="conlist" href="#topic7">Topic 7</a></li>
+  <li><a class="conlist" href="#topic8">Topic 8</a></li>
+  <li><a class="conlist" href="#topic9">Topic 9</a></li>
+  <li><a class="conlist" href="#topic10">Topic 10</a></li>
+  <li><a class="conlist" href="#topic11">Topic 11</a></li>
+</ol>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var links = document.querySelectorAll(".conlist");
+  
+    // Check local storage for completed topics
+    var completedTopics = JSON.parse(localStorage.getItem("completedTopics")) || {};
+  
+    links.forEach(function(link) {
+      var topic = link.getAttribute("href"); // Get the href attribute
+  
+      // Apply completed class to completed topics
+      if (completedTopics[topic]) {
+        link.classList.add("completed");
+      }
+  
+      link.addEventListener("click", function(event) {
+        event.preventDefault(); // Prevent the default link behavior
+  
+        // Toggle completion status
+        if (!completedTopics[topic]) {
+          completedTopics[topic] = true;
+          localStorage.setItem("completedTopics", JSON.stringify(completedTopics));
+          this.classList.add("completed");
+        }
+  
+        // Open respective index.html file after completing the click event
+        var topicNumber = topic.slice(-1); // Extract the topic number from the href
+        var indexFile = topicNumber === "1" ? "index.html" : "index-" + topicNumber + ".html";
+        window.location.href = indexFile;
+      });
+    });
+  });
+</script>
+
+<script src="scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html>
+   
+<head>
+    <script>
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function dragStart(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+
+        function dragDrop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+        }
+    </script>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .drag-container,
+        .drop-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .div1 {
+            width: 100px;
+            height: 30px;
+            padding: 10px;
+            border: 1px solid black;
+            background-color: #F5F5F5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 10px;
+        }
+
+        p {
+            font-size: 20px;
+            font-weight: bold;
+            background-color: #FFD700;
+            padding: 5px;
+            border-radius: 5px;
+            cursor: move;
+            margin: 0;
+        }
+
+        .gfg {
+            font-size: 40px;
+            color: #009900;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div class="container">
+        <div class="drag-container">
+            <div class="div1" ondrop="dragDrop(event)" ondragover="allowDrop(event)">
+                <p id="drag1" draggable="true" ondragstart="dragStart(event)">Text 1</p>
+            </div>
+            <div class="div1" ondrop="dragDrop(event)" ondragover="allowDrop(event)">
+                <p id="drag2" draggable="true" ondragstart="dragStart(event)">Text 2</p>
+            </div>
+            <div class="div1" ondrop="dragDrop(event)" ondragover="allowDrop(event)">
+                <p id="drag3" draggable="true" ondragstart="dragStart(event)">Text 3</p>
+            </div>
+        </div>
+
+        
+      <img src="images/logo8.png" alt="">
+        <div class="drop-container">
+            <div class="div1" ondrop="dragDrop(event)" ondragover="allowDrop(event)"></div>
+            <div class="div1" ondrop="dragDrop(event)" ondragover="allowDrop(event)"></div>
+            <div class="div1" ondrop="dragDrop(event)" ondragover="allowDrop(event)"></div>
+        </div>
+    </div>
+</body>
+
+</html>

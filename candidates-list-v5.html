@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parent Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<style>
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 20px;
+  }
+
+  .card {
+    width: 100%;
+    border-top: 10px solid #d1bf1b; /* Top border with 10px height and custom color */
+    border-radius: 10px;
+  }
+
+  .pie-container, .bar-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 250px; /* Set a fixed height for the charts */
+  }
+
+  .subject-names {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+
+  th {
+    background-color: #f2f2f2;
+  }
+</style>
+<body>
+
+<h1>Parent Dashboard</h1>
+
+<div class="container">
+  <div class="card">
+    <h2>Time Spent Learning</h2>
+    <canvas id="timeSpentChart" width="400" height="200"></canvas>
+  </div>
+  <div class="card">
+    <h2>Lessons Completed</h2>
+    <canvas id="lessonsCompletedChart" width="400" height="200"></canvas>
+  </div>
+  <div class="card">
+    <h2>Study Progress</h2>
+    <canvas id="studyProgressChart" width="400" height="200"></canvas>
+  </div>
+  
+  <!-- Card for Correct and Wrong Answers -->
+  <div class="card">
+    <h2>Answers</h2>
+    <div class="bar-container">
+      <canvas id="answersChart" width="600" height="200"></canvas>
+    </div>
+  </div>
+
+  <!-- New card for subject performance -->
+  <div class="card">
+    <h2>Subject Performance</h2>
+    
+    <div class="pie-container">
+      <canvas id="subjectPerformanceChart"></canvas>
+    </div>
+  </div>
+
+  <!-- Table for subject list, total attempts, total success, and total unsuccessful -->
+  <div class="card">
+    <h2>Subject Statistics</h2>
+    <table id="subjectStatistics">
+      <thead>
+        <tr>
+          <th>Subject</th>
+          <th>Total Attempts</th>
+          <th>Total Success</th>
+          <th>Total Unsuccessful</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Table body will be populated dynamically -->
+      </tbody>
+    </table>
+  </div>
+
+  <button id="continueButton">Continue</button>
+</div>
+
+<script>
+  // Sample data for the charts
+  const timeSpentData = {
+    labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+    datasets: [{
+      label: 'Time Spent (minutes)',
+      data: [120, 150, 180, 200],
+      backgroundColor: 'rgba(255, 99, 132, 0.2)',
+      borderColor: 'rgba(255, 99, 132, 1)',
+      borderWidth: 1
+    }]
+  };
+
+  const lessonsCompletedData = {
+    labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+    datasets: [{
+      label: 'Lessons Completed',
+      data: [4, 6, 8, 10],
+      backgroundColor: 'rgba(54, 162, 235, 0.2)',
+      borderColor: 'rgba(54, 162, 235, 1)',
+      borderWidth: 1
+    }]
+  };
+
+  const studyProgressData = {
+    labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+    datasets: [{
+      label: 'Study Progress (%)',
+      data: [25, 50, 75, 100],
+      backgroundColor: 'rgba(153, 102, 255, 0.2)',
+      borderColor: 'rgba(153, 102, 255, 1)',
+      borderWidth: 1
+    }]
+  };
+
+  const answersData = {
+    labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+    datasets: [{
+      label: 'Correct Answers',
+      data: [30, 40, 45, 50],
+      backgroundColor: 'rgba(75, 192, 192, 0.2)',
+      borderColor: 'rgba(75, 192, 192, 1)',
+      borderWidth: 1
+    },
+    {
+      label: 'Wrong Answers',
+      data: [5, 8, 10, 12],
+      backgroundColor: 'rgba(255, 206, 86, 0.2)',
+      borderColor: 'rgba(255, 206, 86, 1)',
+      borderWidth: 1
+    }]
+  };
+
+  const subjectPerformanceData = {
+    labels: ['Math', 'Science', 'English'],
+    datasets: [{
+      label: 'Subject Performance',
+      data: [40, 30, 30], // Sample data percentages, total sum should be 100%
+      backgroundColor: ['#ffcd56', '#36a2eb', '#ff6384'],
+      borderWidth: 1
+    }]
+  };
+
+  // Sample data for the table
+  const subjectStatisticsData = [
+    { subject: 'Math', attempts: 50, success: 40, unsuccessful: 10 },
+    { subject: 'Science', attempts: 60, success: 45, unsuccessful: 15 },
+    { subject: 'English', attempts: 55, success: 35, unsuccessful: 20 }
+  ];
+
+  // Populate the table with data
+  const tableBody = document.querySelector('#subjectStatistics tbody');
+  subjectStatisticsData.forEach(item => {
+    const row = document.createElement('tr');
+    row.innerHTML = `
+      <td>${item.subject}</td>
+      <td>${item.attempts}</td>
+      <td>${item.success}</td>
+      <td>${item.unsuccessful}</td>
+    `;
+    tableBody.appendChild(row);
+  });
+
+  // Chart configuration
+  const timeSpentCtx = document.getElementById('timeSpentChart').getContext('2d');
+  const timeSpentChart = new Chart(timeSpentCtx, {
+    type: 'line',
+    data: timeSpentData,
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+
+  const lessonsCompletedCtx = document.getElementById('lessonsCompletedChart').getContext('2d');
+  const lessonsCompletedChart = new Chart(lessonsCompletedCtx, {
+    type: 'bar',
+    data: lessonsCompletedData,
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+
+  const studyProgressCtx = document.getElementById('studyProgressChart').getContext('2d');
+  const studyProgressChart = new Chart(studyProgressCtx, {
+    type: 'line',
+    data: studyProgressData,
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true,
+          max: 100
+        }
+      }
+    }
+  });
+
+  const answersCtx = document.getElementById('answersChart').getContext('2d');
+  const answersChart = new Chart(answersCtx, {
+    type: 'bar',
+    data: answersData,
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+
+  const subjectPerformanceCtx = document.getElementById('subjectPerformanceChart').getContext('2d');
+  const subjectPerformanceChart = new Chart(subjectPerformanceCtx, {
+    type: 'pie',
+    data: subjectPerformanceData
+  });
+
+  // Continue button event listener
+  const continueButton = document.getElementById('continueButton');
+  continueButton.addEventListener('click', () => {
+    // Add your continue button functionality here
+    alert('Continue button clicked!');
+  });
+</script>
+</body>
+</html>

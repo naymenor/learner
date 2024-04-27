@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Superio | Just another HTML Template | Dashboard</title>
+
+  <!-- Stylesheets -->
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  
+
+  <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+  <link rel="icon" href="images/favicon.png" type="image/x-icon">
+
+  <!-- Responsive -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+  <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<style>
+  .menu-btn1 {
+    background-color: #fff; /* Button background color */
+    border: none;
+    cursor: pointer;
+    padding: 10px; /* Adjust padding as needed */
+    border-radius: 50%; /* Makes the button circular */
+    
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  
+    /* Center the icon horizontally and vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .menu-btn1:hover {
+    background-color: #f0f0f0; /* Change background color on hover */
+  }
+  
+  .icon1 {
+    font-size: 1.5rem; /* Adjust the icon size */
+    color: #333; /* Icon color */
+  }
+
+
+  .equal-height {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .equal-height .graph-widget {
+    flex: 1;
+  }
+  
+
+
+
+
+  .sidebar {
+    width: 250px;
+    background-color: #f0f0f0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+  }
+  
+  .sidebar-inner {
+    padding: 20px;
+  }
+  
+  .navigation {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .navigation li {
+    margin-bottom: 10px;
+  }
+  
+  .navigation a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 10px;
+  }
+  
+  .submenu {
+    display: none;
+  }
+  
+  .navigation .has-submenu {
+    position: relative;
+  }
+  
+  .navigation .has-submenu .fa-chevron-down {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+
+  
+
+  /* Add style for active submenu */
+  .has-submenu.active .submenu {
+    display: block;
+  }
+
+
+  /* Initially hide the submenu */
+.submenu {
+  display: none;
+}
+
+/* Add transition effect */
+.submenu {
+  transition: max-height 0.3s ease-out;
+  overflow: hidden;
+}
+
+/* Add padding to submenu items */
+.submenu li {
+  padding-left: 20px;
+}
+
+
+  
+  
+  
+</style>
+
+
+<style>
+ 
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+
+  th {
+    background-color: #f2f2f2;
+  }
+</style>
+
+
+<body>
+
+  <div class="page-wrapper dashboard ">
+
+   
+
+    <!-- Header Span -->
+    <span class="header-span"></span>
+
+    <!-- Main Header-->
+    <header class="main-header header-shaddow">
+      <div class="container-fluid">
+        <!-- Main box -->
+        <div class="main-box">
+          <!--Nav Outer -->
+          <div class="nav-outer">
+            <div class="logo-box">
+              <div class="logo"><a href="index.html"><img style="height: 40px;" src="images/logo8.png" alt="" title=""></a></div>
+            </div>
+
+            <nav class="nav main-menu" style="margin-left: 100px;">
+              <ul class="navigation" id="navbar">
+                <li class="dropdown">
+                  <span>LEARNING</span>
+                  <!-- <div class="mega-menu">
+                    <div class="mega-menu-bar row pt-0">
+                      <div class="column col-lg-3 col-md-3 col-sm-12">
+                        <ul>
+                          <li class="current"><a href="index.html">Home Page 01</a></li>
+                          <li><a href="index-2.html">Home Page 02</a></li>
+                          <li><a href="index-3.html">Home Page 03</a></li>
+                          <li><a href="index-4.html">Home Page 04</a></li>
+                          <li><a href="index-5.html">Home Page 05</a></li>
+                        </ul>
+                      </div>
+  
+                      <div class="column col-lg-3 col-md-3 col-sm-12">
+                        <ul>
+                          <li><a href="index-6.html">Home Page 06</a></li>
+                          <li><a href="index-7.html">Home Page 07</a></li>
+                          <li><a href="index-8.html">Home Page 08</a></li>
+                          <li><a href="index-9.html">Home Page 09</a></li>
+                          <li><a href="index-10.html">Home Page 10</a></li>
+                        </ul>
+                      </div>
+  
+                      <div class="column col-lg-3 col-md-3 col-sm-12">
+                        <ul>
+                          <li><a href="index-11.html">Home Page 11</a></li>
+                          <li><a href="index-12.html">Home Page 12</a></li>
+                          <li><a href="index-13.html">Home Page 13</a></li>
+                          <li><a href="index-14.html">Home Page 14</a></li>
+                          <li><a href="index-15.html">Home Page 15</a></li>
+                        </ul>
+                      </div>
+  
+                      <div class="column col-lg-3 col-md-3 col-sm-12">
+                        <ul>
+                          <li><a href="index-16.html">Home Page 16</a></li>
+                          <li><a href="index-17.html">Home Page 17</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div> -->
+                </li>
+  
+                <li class="dropdown has-mega-menu" id="has-mega-menu">
+                  <span>SUBJECT</span>
+                  <!-- <div class="mega-menu">
+                    <div class="mega-menu-bar row">
+                      <div class="column col-lg-3 col-md-3 col-sm-12">
+                        <h3>Jobs Listing</h3>
+                        <ul>
+                          <li><a href="job-list-v1.html">Jobs List – v1</a></li>
+                          <li><a href="job-list-v2.html">Jobs List – v2</a></li>
+                          <li><a href="job-list-v3.html">Jobs List – v3</a></li>
+                          <li><a href="job-list-v4.html">Jobs List – v4</a></li>
+                          <li><a href="job-list-v5.html">Jobs List – v5</a></li>
+                        </ul>
+                      </div>
+  
+                      <div class="column col-lg-3 col-md-3 col-sm-12">
+                        <ul>
+                          <li><a href="job-list-v6.html">Jobs List – v6</a></li>
+                          <li><a href="job-list-v7.html">Jobs List – v7</a></li>
+                          <li><a href="job-list-v8.html">Jobs List – v8</a></li>
+                          <li><a href="job-list-v9.html">Jobs List – v9</a></li>
+                          <li><a href="job-list-v10.html">Jobs List – v10</a></li>
+                        </ul>
+                      </div>
+  
+                      <div class="column col-lg-3 col-md-3 col-sm-12">
+                        <ul>
+                          <li><a href="job-list-v11.html">Jobs List – v11</a></li>
+                          <li><a href="job-list-v12.html">Jobs List – v12</a></li>
+                          <li><a href="job-list-v13.html">Jobs List – v13</a></li>
+                          <li><a href="job-list-v14.html">Jobs List – v14</a></li>
+                        </ul>
+                      </div>
+  
+                      <div class="column col-lg-3 col-md-3 col-sm-12">
+                        <h3>Jobs Single</h3>
+                        <ul>
+                          <li><a href="job-single.html">Job Single v1</a></li>
+                          <li><a href="job-single-2.html">Job Single v2</a></li>
+                          <li><a href="job-single-3.html">Job Single v3</a></li>
+                          <li><a href="job-single-4.html">Job Single v4</a></li>
+                          <li><a href="job-single-5.html">Job Single v5</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div> -->
+                </li>
+  
+  
+                <li>
+                  <span>ASSESSMENT</span>
+                  
+                </li>
+                <li>
+                  <a href="dashboard.html"><span>PARENT</span></a>
+                  
+                </li>
+  
+                
+                
+  
+                <!-- Only for Mobile View -->
+                <!-- <li class="mm-add-listing">
+                  <a href="add-listing.html" class="theme-btn btn-style-one">Job Post</a>
+                  <span>
+                    <span class="contact-info">
+                      <span class="phone-num"><span>Call us</span><a href="tel:1234567890">123 456 7890</a></span>
+                      <span class="address">329 Queensberry Street, North Melbourne VIC <br>3051, Australia.</span>
+                      <a href="mailto:support@superio.com" class="email">support@superio.com</a>
+                    </span>
+                    <span class="social-links">
+                      <a href="#"><span class="fab fa-facebook-f"></span></a>
+                      <a href="#"><span class="fab fa-twitter"></span></a>
+                      <a href="#"><span class="fab fa-instagram"></span></a>
+                      <a href="#"><span class="fab fa-linkedin-in"></span></a>
+                    </span>
+                  </span>
+                </li> -->
+              </ul>
+            </nav>
+            <!-- Main Menu End-->
+          </div>
+
+
+          <div class="outer-box">
+
+            <button class="menu-btn1">
+              <span class="icon1 la la-bell"></span>
+            </button>
+          
+          
+            <!-- Login/Register -->
+            <div class="btn-box">
+              <a href="login-popup.html" class="theme-btn btn-style-six call-modal" style="color: black; font-size:18px">Login</a>
+              <a href="login-popup.html" class="theme-btn btn-style-six call-modal" style="color: black; font-size:18px">Signup</a>
+              <!-- <a href="dashboard-post-job.html" class="theme-btn btn-style-two"><span class="btn-title">Signup</span></a> -->
+            </div>
+          </div>
+
+          <!-- <div class="outer-box">
+
+            <button class="menu-btn">
+              <span class="count">1</span>
+              <span class="icon la la-heart-o"></span>
+            </button>
+
+            <button class="menu-btn">
+              <span class="icon la la-bell"></span>
+            </button>
+
+            
+            <div class="dropdown dashboard-option">
+              <a class="dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="false">
+                <img src="images/resource/company-6.png" alt="avatar" class="thumb">
+                <span class="name">My Account</span>
+              </a>
+              <ul class="dropdown-menu">
+                <li class="active"><a href="dashboard.html"> <i class="la la-home"></i> Dashboard</a></li>
+                <li><a href="dashboard-company-profile.html"><i class="la la-user-tie"></i>Company Profile</a></li>
+                <li><a href="dashboard-post-job.html"><i class="la la-paper-plane"></i>Post a New Job</a></li>
+                <li><a href="dashboard-manage-job.html"><i class="la la-briefcase"></i> Manage Jobs </a></li>
+                <li><a href="dashboard-applicants.html"><i class="la la-file-invoice"></i> All Applicants</a></li>
+                <li><a href="dashboard-resumes.html"><i class="la la-bookmark-o"></i>Shortlisted Resumes</a></li>
+                <li><a href="dashboard-packages.html"><i class="la la-box"></i>Packages</a></li>
+                <li><a href="dashboard-messages.html"><i class="la la-comment-o"></i>Messages</a></li>
+                <li><a href="dashboard-resume-alerts.html"><i class="la la-bell"></i>Resume Alerts</a></li>
+                <li><a href="dashboard-change-password.html"><i class="la la-lock"></i>Change Password</a></li>
+                <li><a href="dashboard-company-profile.html"><i class="la la-user-alt"></i>View Profile</a></li>
+                <li><a href="index.html"><i class="la la-sign-out"></i>Logout</a></li>
+                <li><a href="index.html"><i class="la la-trash"></i>Delete Profile</a></li>
+              </ul>
+            </div>
+          </div> -->
+        </div>
+      </div>
+
+      <!-- Mobile Header -->
+      <div class="mobile-header">
+        <div class="logo"><a href="index.html"><img src="images/logo.svg" alt="" title=""></a></div>
+
+        <!--Nav Box-->
+        <div class="nav-outer clearfix">
+
+          <div class="outer-box">
+            <!-- Login/Register -->
+            <div class="login-box">
+              <a href="login-popup.html" class="call-modal"><span class="icon-user"></span></a>
+            </div>
+
+            <button id="toggle-user-sidebar"><img src="images/resource/company-6.png" alt="avatar" class="thumb"></button>
+            <a href="#nav-mobile" class="mobile-nav-toggler navbar-trigger"><span class="flaticon-menu-1"></span></a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Mobile Nav -->
+      <div id="nav-mobile"></div>
+    </header>
+    <!--End Main Header -->
+
+    <!-- Sidebar Backdrop -->
+    <div class="sidebar-backdrop"></div>
+
+    <!-- User Sidebar -->
+    <!-- <div class="user-sidebar">
+      <div class="sidebar-inner">
+        <ul class="navigation">
+          <li><a href="dashboard.html"> <i class="la la-home"></i> Dashboard</a></li>
+          <li class="has-submenu">
+            <a href="#"><i class="la la-book"></i>Subject</a>
+            <div class="submenu">
+              <ul>
+                <li><a href="#">Math</a></li>
+                <li><a href="#">Science</a></li>
+                <li><a href="#">English</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="has-submenu">
+            <a href="#"><i class="la la-paper-plane"></i>Child Activity</a>
+            <div class="submenu">
+              <ul>
+                <li><a href="#">Play</a></li>
+                <li><a href="#">Learning</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div> -->
+
+
+    <div class="user-sidebar">
+      <div class="sidebar-inner">
+        <ul class="navigation">
+          <li class="active"><a href="dashboard.html"> <i class="la la-home"></i> Dashboard</a></li>
+          <!-- <li class="has-submenu">
+            <a href="#"> <i class="la la-home"></i> Dashboard</a>
+            <ul class="submenu">
+              <li><a href="#">Submenu Item 1</a></li>
+              <li><a href="#">Submenu Item 2</a></li>
+            </ul>
+          </li> -->
+          <li class="has-submenu">
+            <a href="#"><i class="la la-book"></i>Subject</a>
+            <ul class="submenu">
+              <li><a href="#">Math</a></li>
+              <li><a href="#">Science</a></li>
+              <li><a href="#">English</a></li>
+            </ul>
+          </li>
+          <li class="has-submenu">
+            <a href="#"><i class="la la-child"></i>Child Activity</a>
+            <ul class="submenu">
+              <li><a href="#">Learned</a></li>
+              <li><a href="#">Played</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+    
+    <!-- End User Sidebar -->
+
+    <!-- Dashboard -->
+    <section class="user-dashboard">
+      <div class="dashboard-outer">
+        <div class="upper-title-box">
+          <h3>Welcome, Parent</h3>
+          <div class="text"><a style="color: #333;" href="">Learn what can do with learner as a parent</a></div>
+        </div>
+        <!-- <div class="row">
+          <div class="ui-block col-xl-3 col-lg-6 col-md-6 col-sm-12">
+            <div class="ui-item">
+              <div class="left">
+                <i class="icon flaticon-briefcase"></i>
+              </div>
+              <div class="right">
+                <h4>22</h4>
+                <p>Posted Jobs</p>
+              </div>
+            </div>
+          </div>
+          <div class="ui-block col-xl-3 col-lg-6 col-md-6 col-sm-12">
+            <div class="ui-item ui-red">
+              <div class="left">
+                <i class="icon la la-file-invoice"></i>
+              </div>
+              <div class="right">
+                <h4>9382</h4>
+                <p>Application</p>
+              </div>
+            </div>
+          </div>
+          <div class="ui-block col-xl-3 col-lg-6 col-md-6 col-sm-12">
+            <div class="ui-item ui-yellow">
+              <div class="left">
+                <i class="icon la la-comment-o"></i>
+              </div>
+              <div class="right">
+                <h4>74</h4>
+                <p>Messages</p>
+              </div>
+            </div>
+          </div>
+          <div class="ui-block col-xl-3 col-lg-6 col-md-6 col-sm-12">
+            <div class="ui-item ui-green">
+              <div class="left">
+                <i class="icon la la-bookmark-o"></i>
+              </div>
+              <div class="right">
+                <h4>32</h4>
+                <p>Shortlist</p>
+              </div>
+            </div>
+          </div>
+        </div> -->
+
+
+        <div class="row">
+
+
+          <div class="col-xl-6 col-lg-12">
+            <!-- Graph widget -->
+            <div class="graph-widget ls-widget">
+              <div class="tabs-box">
+                <div class="widget-title">
+                  <h4>Lessons Completed</h4>
+                  <div class="chosen-outer">
+                    <!--Tabs Box-->
+                    <select class="chosen-select">
+                      <option>Last 6 Months</option>
+                      <option>Last 12 Months</option>
+                      <option>Last 16 Months</option>
+                      <option>Last 24 Months</option>
+                      <option>Last 5 year</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="widget-content">
+                  <canvas id="lessonsCompletedChart"  width="100" height="45"></canvas>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xl-6 col-lg-12">
+            <!-- Graph widget -->
+            <div class="graph-widget ls-widget">
+              <div class="tabs-box">
+                <div class="widget-title">
+                  <h4>Time Spent Learning</h4>
+                  <div class="chosen-outer">
+                    <!--Tabs Box-->
+                    <select class="chosen-select">
+                      <option>Last 6 Months</option>
+                      <option>Last 12 Months</option>
+                      <option>Last 16 Months</option>
+                      <option>Last 24 Months</option>
+                      <option>Last 5 year</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="widget-content">
+                  <canvas id="timeSpentChart"  width="100" height="45"></canvas>
+                  
+                </div>
+
+
+
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-xl-6 col-lg-12">
+            <!-- Graph widget -->
+            <div class="graph-widget ls-widget">
+              <div class="tabs-box">
+                <div class="widget-title">
+                  <h4>Study Progress</h4>
+                  <div class="chosen-outer">
+                    <!--Tabs Box-->
+                    <select class="chosen-select">
+                      <option>Last 6 Months</option>
+                      <option>Last 12 Months</option>
+                      <option>Last 16 Months</option>
+                      <option>Last 24 Months</option>
+                      <option>Last 5 year</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="widget-content">
+                  <canvas id="studyProgressChart"  width="100" height="45"></canvas>
+
+                  
+                </div>
+
+
+
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xl-6 col-lg-12">
+            <!-- Graph widget -->
+            <div class="graph-widget ls-widget">
+              <div class="tabs-box">
+                <div class="widget-title">
+                  <h4>Subject Performance</h4>
+                  <div class="chosen-outer">
+                    <!--Tabs Box-->
+                    <select class="chosen-select">
+                      <option>Last 6 Months</option>
+                      <option>Last 12 Months</option>
+                      <option>Last 16 Months</option>
+                      <option>Last 24 Months</option>
+                      <option>Last 5 year</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="widget-content">
+                  <canvas  id="subjectPerformanceChart"  width="100" height="45"></canvas>
+                  
+                  
+                </div>
+
+
+
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-xl-6 col-lg-12 equal-height">
+            <!-- Graph widget -->
+            <div class="graph-widget ls-widget">
+              <div class="tabs-box">
+                <div class="widget-title">
+                  <h4>Answers</h4>
+                  <div class="chosen-outer">
+                    <!--Tabs Box-->
+                    <select class="chosen-select">
+                      <option>Last 6 Months</option>
+                      <option>Last 12 Months</option>
+                      <option>Last 16 Months</option>
+                      <option>Last 24 Months</option>
+                      <option>Last 5 year</option>
+                    </select>
+                  </div>
+                </div>
+          
+                <div class="widget-content">
+                  <canvas id="answersChart" width="100" height="45"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-xl-6 col-lg-12 equal-height">
+            <!-- Graph widget -->
+            <div class="graph-widget ls-widget">
+              <div class="tabs-box">
+                <div class="widget-title">
+                  <h4>Subject Statistics</h4>
+                  <div class="chosen-outer">
+                    <!--Tabs Box-->
+                    <select class="chosen-select">
+                      <option>Last 6 Months</option>
+                      <option>Last 12 Months</option>
+                      <option>Last 16 Months</option>
+                      <option>Last 24 Months</option>
+                      <option>Last 5 year</option>
+                    </select>
+                  </div>
+                </div>
+          
+                <div class="widget-content">
+                  <table id="subjectStatistics">
+                    <thead>
+                      <tr>
+                        <th>Subject</th>
+                        <th>Total Attempts</th>
+                        <th>Total Success</th>
+                        <th>Total Unsuccessful</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <!-- Table body will be populated dynamically -->
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+
+           
+
+
+        
+
+          <!-- <div class="col-xl-5 col-lg-12">
+           
+            <div class="notification-widget ls-widget">
+              <div class="widget-title">
+                <h4>Notifications</h4>
+              </div>
+              <div class="widget-content">
+                <ul class="notification-list">
+                  <li><span class="icon flaticon-briefcase"></span> <strong>Wade Warren</strong> applied for a job <span class="colored">Web Developer</span></li>
+                  <li><span class="icon flaticon-briefcase"></span> <strong>Henry Wilson</strong> applied for a job <span class="colored">Senior Product Designer</span></li>
+                  <li class="success"><span class="icon flaticon-briefcase"></span> <strong>Raul Costa</strong> applied for a job <span class="colored">Product Manager, Risk</span></li>
+                  <li><span class="icon flaticon-briefcase"></span> <strong>Jack Milk</strong> applied for a job <span class="colored">Technical Architect</span></li>
+                  <li class="success"><span class="icon flaticon-briefcase"></span> <strong>Michel Arian</strong> applied for a job <span class="colored">Software Engineer</span></li>
+                  <li><span class="icon flaticon-briefcase"></span> <strong>Ali Tufan</strong> applied for a job <span class="colored">UI Designer</span></li>
+                </ul>
+              </div>
+            </div>
+          </div> -->
+
+
+          
+        </div>
+      </div>
+    </section>
+    <!-- End Dashboard -->
+
+    <!-- Copyright -->
+    <div class="copyright-text">
+      <p>© 2024 learner. All Right Reserved.</p>
+    </div>
+
+  </div><!-- End Page Wrapper -->
+
+
+  <script src="js/jquery.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/chosen.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery-ui.min.js"></script>
+  <script src="js/jquery.fancybox.js"></script>
+  <script src="js/jquery.modal.min.js"></script>
+  <script src="js/mmenu.polyfills.js"></script>
+  <script src="js/mmenu.js"></script>
+  <script src="js/appear.js"></script>
+  <script src="js/ScrollMagic.min.js"></script>
+  <script src="js/rellax.min.js"></script>
+  <script src="js/owl.js"></script>
+  <script src="js/wow.js"></script>
+  <script src="js/script.js"></script>
+
+  <!-- Chart.js // documentation: http://www.chartjs.org/docs/latest/ -->
+  <script src="js/chart.min.js"></script>
+  
+
+  <script>
+    // Sample data for the charts
+    const timeSpentData = {
+      labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+      datasets: [{
+        label: 'Time Spent (minutes)',
+        data: [120, 110, 180, 200],
+        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+        borderColor: 'rgba(255, 99, 132, 1)',
+        borderWidth: 1
+      }]
+    };
+  
+    const lessonsCompletedData = {
+      labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+      datasets: [{
+        label: 'Lessons Completed',
+        data: [5, 6, 8, 10],
+        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+        borderColor: 'rgba(54, 162, 235, 1)',
+        borderWidth: 1
+      }]
+    };
+  
+    const studyProgressData = {
+      labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+      datasets: [{
+        label: 'Study Progress (%)',
+        data: [30, 22, 75, 100],
+        backgroundColor: 'rgba(153, 102, 255, 0.2)',
+        borderColor: 'rgba(153, 102, 255, 1)',
+        borderWidth: 1
+      }]
+    };
+  
+    const answersData = {
+      labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+      datasets: [{
+        label: 'Correct Answers',
+        data: [30, 40, 45, 50],
+        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+        borderColor: 'rgba(75, 192, 192, 1)',
+        borderWidth: 1
+      },
+      {
+        label: 'Wrong Answers',
+        data: [5, 8, 10, 12],
+        backgroundColor: 'rgba(255, 206, 86, 0.2)',
+        borderColor: 'rgba(255, 206, 86, 1)',
+        borderWidth: 1
+      }]
+    };
+  
+    const subjectPerformanceData = {
+      labels: ['Math (%)', 'Science (%)', 'English (%)'],
+      datasets: [{
+        label: 'Subject Performance',
+        data: [40, 30, 30], // Sample data percentages, total sum should be 100%
+        backgroundColor: ['#ffcd56', '#36a2eb', '#ff6384'],
+        borderWidth: 1
+      }]
+    };
+  
+    // Sample data for the table
+    const subjectStatisticsData = [
+      { subject: 'Math', attempts: 50, success: 40, unsuccessful: 10 },
+      { subject: 'Science', attempts: 60, success: 45, unsuccessful: 15 },
+      { subject: 'English', attempts: 55, success: 35, unsuccessful: 20 }
+    ];
+  
+    // Populate the table with data
+    const tableBody = document.querySelector('#subjectStatistics tbody');
+    subjectStatisticsData.forEach(item => {
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>${item.subject}</td>
+        <td>${item.attempts}</td>
+        <td>${item.success}</td>
+        <td>${item.unsuccessful}</td>
+      `;
+      tableBody.appendChild(row);
+    });
+  
+    // Chart configuration
+    const timeSpentCtx = document.getElementById('timeSpentChart').getContext('2d');
+    const timeSpentChart = new Chart(timeSpentCtx, {
+      type: 'line',
+      data: timeSpentData,
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  
+    const lessonsCompletedCtx = document.getElementById('lessonsCompletedChart').getContext('2d');
+    const lessonsCompletedChart = new Chart(lessonsCompletedCtx, {
+      type: 'bar',
+      data: lessonsCompletedData,
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  
+    const studyProgressCtx = document.getElementById('studyProgressChart').getContext('2d');
+    const studyProgressChart = new Chart(studyProgressCtx, {
+      type: 'line',
+      data: studyProgressData,
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true,
+            max: 100
+          }
+        }
+      }
+    });
+  
+    const answersCtx = document.getElementById('answersChart').getContext('2d');
+    const answersChart = new Chart(answersCtx, {
+      type: 'bar',
+      data: answersData,
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  
+    const subjectPerformanceCtx = document.getElementById('subjectPerformanceChart').getContext('2d');
+    const subjectPerformanceChart = new Chart(subjectPerformanceCtx, {
+      type: 'pie',
+      data: subjectPerformanceData
+    });
+  
+    // Continue button event listener
+    const continueButton = document.getElementById('continueButton');
+    continueButton.addEventListener('click', () => {
+      // Add your continue button functionality here
+      alert('Continue button clicked!');
+    });
+  </script>
+
+
+  <script>
+    $(document).ready(function(){
+      $('.has-submenu > a').click(function(e){
+        e.preventDefault(); // Prevent default link behavior
+        var $submenu = $(this).siblings('.submenu');
+        if ($submenu.is(':visible')) {
+          $submenu.slideUp();
+          $(this).parent().removeClass('active');
+        } else {
+          $('.submenu').slideUp(); // Close other submenus
+          $('.has-submenu').removeClass('active'); // Remove active class from other menu items
+          $submenu.slideDown();
+          $(this).parent().addClass('active');
+        }
+      });
+    });
+    
+    
+  </script>
+
+</body>
+
+</html>

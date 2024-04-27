@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>learner</title>
+
+  <!-- Stylesheets -->
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  
+
+  <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+  <link rel="icon" href="images/favicon.png" type="image/x-icon">
+
+  <!-- Responsive -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+  <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+
+
+  <style>
+
+  @font-face {
+      font-family: 'Jersey 15';
+      src: url('fonts/Jersey_15/Jersey15-Regular.ttf') format('truetype'); /* Specify the path to your font file */
+  }
+  
+  .jersey-15-regular {
+    font-family: 'Jersey 15', Arial, sans-serif; /* Specify the font family with fallbacks */
+    font-size: 60pt;
+    color: #9a2464;
+  }
+
+
+  @font-face {
+    font-family: 'Verdana, arial, helvetica, clean, sans-serif';
+    src: local('Verdana'), local('Arial'), local('Helvetica'), local('clean'), local('sans-serif');
+}
+
+.conlist{
+  color: rgba(255, 85, 0, 0.986);
+}
+
+.conlist:hover{
+  color: #545454;
+}
+
+
+
+
+
+
+
+
+.feedback-header {
+  color: #00adef;
+  font: 48px Trebuchet MS, sans-serif;
+  margin: 0 0 10px;
+  padding: 30px;
+}
+
+
+
+.problem-description p {
+  margin: 0 0 10px;
+  font-size: 20px;
+  color: #000000;
+  
+}
+
+.solution {
+  margin-top: 20px;
+  padding-bottom: 20px;
+  color: red;
+  font-weight: bold;
+  
+}
+
+.solution h2 {
+  margin-top: 0;
+}
+
+.solution p {
+  margin: 5px 0;
+  font-size: 20px;
+  color: #000000;
+  font-weight: 400;
+}
+
+
+.explanation {
+  position: relative;
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 40px 60px;
+  border: 2px solid #ccc;
+}
+
+
+
+
+  
+  </style>
+</head>
+
+<style>
+  .non-active-chap-border {
+    border-bottom: 1px solid #d0deef;
+    margin: 15px 0 16px;
+}
+</style>
+
+<body>
+
+  <div class="page-wrapper">
+
+    <!-- Preloader -->
+    <!-- <div class="preloader"></div> -->
+
+    <!-- Header Span -->
+    <span class="header-span"></span>
+
+    <!-- Main Header-->
+    <header class="main-header">
+
+      <!-- Main box -->
+      <div class="main-box">
+        <!--Nav Outer -->
+        <div class="nav-outer">
+          <div class="logo-box" style="margin-left: 50px;">
+            <div class="logo"><a href="index.html"><img style="height: 40px;" src="images/logo8.png" alt="" title=""></a></div>
+          </div>
+
+          <nav class="nav main-menu" style="margin-left: 100px;">
+            <ul class="navigation" id="navbar">
+              <li class="dropdown">
+                <span>LEARNING</span>
+                <!-- <div class="mega-menu">
+                  <div class="mega-menu-bar row pt-0">
+                    <div class="column col-lg-3 col-md-3 col-sm-12">
+                      <ul>
+                        <li class="current"><a href="index.html">Home Page 01</a></li>
+                        <li><a href="index-2.html">Home Page 02</a></li>
+                        <li><a href="index-3.html">Home Page 03</a></li>
+                        <li><a href="index-4.html">Home Page 04</a></li>
+                        <li><a href="index-5.html">Home Page 05</a></li>
+                      </ul>
+                    </div>
+
+                    <div class="column col-lg-3 col-md-3 col-sm-12">
+                      <ul>
+                        <li><a href="index-6.html">Home Page 06</a></li>
+                        <li><a href="index-7.html">Home Page 07</a></li>
+                        <li><a href="index-8.html">Home Page 08</a></li>
+                        <li><a href="index-9.html">Home Page 09</a></li>
+                        <li><a href="index-10.html">Home Page 10</a></li>
+                      </ul>
+                    </div>
+
+                    <div class="column col-lg-3 col-md-3 col-sm-12">
+                      <ul>
+                        <li><a href="index-11.html">Home Page 11</a></li>
+                        <li><a href="index-12.html">Home Page 12</a></li>
+                        <li><a href="index-13.html">Home Page 13</a></li>
+                        <li><a href="index-14.html">Home Page 14</a></li>
+                        <li><a href="index-15.html">Home Page 15</a></li>
+                      </ul>
+                    </div>
+
+                    <div class="column col-lg-3 col-md-3 col-sm-12">
+                      <ul>
+                        <li><a href="index-16.html">Home Page 16</a></li>
+                        <li><a href="index-17.html">Home Page 17</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div> -->
+              </li>
+
+              <li class="dropdown has-mega-menu" id="has-mega-menu">
+                <span>SUBJECT</span>
+                <!-- <div class="mega-menu">
+                  <div class="mega-menu-bar row">
+                    <div class="column col-lg-3 col-md-3 col-sm-12">
+                      <h3>Jobs Listing</h3>
+                      <ul>
+                        <li><a href="job-list-v1.html">Jobs List – v1</a></li>
+                        <li><a href="job-list-v2.html">Jobs List – v2</a></li>
+                        <li><a href="job-list-v3.html">Jobs List – v3</a></li>
+                        <li><a href="job-list-v4.html">Jobs List – v4</a></li>
+                        <li><a href="job-list-v5.html">Jobs List – v5</a></li>
+                      </ul>
+                    </div>
+
+                    <div class="column col-lg-3 col-md-3 col-sm-12">
+                      <ul>
+                        <li><a href="job-list-v6.html">Jobs List – v6</a></li>
+                        <li><a href="job-list-v7.html">Jobs List – v7</a></li>
+                        <li><a href="job-list-v8.html">Jobs List – v8</a></li>
+                        <li><a href="job-list-v9.html">Jobs List – v9</a></li>
+                        <li><a href="job-list-v10.html">Jobs List – v10</a></li>
+                      </ul>
+                    </div>
+
+                    <div class="column col-lg-3 col-md-3 col-sm-12">
+                      <ul>
+                        <li><a href="job-list-v11.html">Jobs List – v11</a></li>
+                        <li><a href="job-list-v12.html">Jobs List – v12</a></li>
+                        <li><a href="job-list-v13.html">Jobs List – v13</a></li>
+                        <li><a href="job-list-v14.html">Jobs List – v14</a></li>
+                      </ul>
+                    </div>
+
+                    <div class="column col-lg-3 col-md-3 col-sm-12">
+                      <h3>Jobs Single</h3>
+                      <ul>
+                        <li><a href="job-single.html">Job Single v1</a></li>
+                        <li><a href="job-single-2.html">Job Single v2</a></li>
+                        <li><a href="job-single-3.html">Job Single v3</a></li>
+                        <li><a href="job-single-4.html">Job Single v4</a></li>
+                        <li><a href="job-single-5.html">Job Single v5</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div> -->
+              </li>
+
+
+              <li>
+                <span>ASSESSMENT</span>
+                
+              </li>
+              <li>
+                <a href="dashboard.html"><span>PARENT</span></a>
+                
+              </li>
+
+              
+              
+
+              <!-- Only for Mobile View -->
+              <!-- <li class="mm-add-listing">
+                <a href="add-listing.html" class="theme-btn btn-style-one">Job Post</a>
+                <span>
+                  <span class="contact-info">
+                    <span class="phone-num"><span>Call us</span><a href="tel:1234567890">123 456 7890</a></span>
+                    <span class="address">329 Queensberry Street, North Melbourne VIC <br>3051, Australia.</span>
+                    <a href="mailto:support@superio.com" class="email">support@superio.com</a>
+                  </span>
+                  <span class="social-links">
+                    <a href="#"><span class="fab fa-facebook-f"></span></a>
+                    <a href="#"><span class="fab fa-twitter"></span></a>
+                    <a href="#"><span class="fab fa-instagram"></span></a>
+                    <a href="#"><span class="fab fa-linkedin-in"></span></a>
+                  </span>
+                </span>
+              </li> -->
+            </ul>
+          </nav>
+          <!-- Main Menu End-->
+        </div>
+
+        <div class="outer-box">
+          
+          
+          <!-- Login/Register -->
+          <div class="btn-box">
+            <a href="login-popup.html" class="theme-btn btn-style-six call-modal" style="color: black; font-size:18px">Login</a>
+            <a href="login-popup.html" class="theme-btn btn-style-six call-modal" style="color: black; font-size:18px">Signup</a>
+            <!-- <a href="dashboard-post-job.html" class="theme-btn btn-style-two"><span class="btn-title">Signup</span></a> -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Header -->
+      <div class="mobile-header">
+        <div class="logo"><a href="index.html"><img src="images/logo8.png" alt="" title=""></a></div>
+
+        <!--Nav Box-->
+        <div class="nav-outer clearfix">
+
+          <div class="outer-box">
+            <!-- Login/Register -->
+            <div class="login-box">
+              <a href="login-popup.html" class="call-modal"><span class="icon-user"></span></a>
+            </div>
+
+            <a href="#nav-mobile" class="mobile-nav-toggler"><span class="flaticon-menu-1"></span></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Nav -->
+      <div id="nav-mobile"></div>
+    </header>
+    <!--End Main Header -->
+
+    <!--Page Title-->
+    <section class="page-title">
+      <div class="auto-container">
+        <div class="row">
+          
+
+            <div class="title-outer col-lg-10 pt-3">
+              <h1 class="text-left jersey-15-regular" style="font-size: 60pt; color: #9a2464;">SEVENTH GRADE</h1>
+              <p class="text-left">Multiplying and dividing, bar graphs, pronouns, possessives, weather and climate, geography, and more.</p>
+              
+            </div>
+
+            <!-- <div class="title-outer col-lg-2">
+              <img style="height: 100px;" src="images/resource/2.jpg" alt="">
+              
+            </div>     -->
+
+        </div>
+        
+      </div>
+    </section>
+    <!--End Page Title-->
+
+
+
+
+     <!-- Job Section -->
+     <section class="job-section-five style-two">
+      <div class="auto-container">
+        <div class="row wow fadeInUp">
+          <!-- <div class="featured-column col-xl-9 col-lg-12 col-md-12 col-sm-12">
+            <div class="sec-title">
+              <h2>Subject</h2>
+              <div class="text">Practice academic all subject </div>
+            </div>
+            
+            
+          </div> -->
+
+          <div class="default-tabs style-two tabs-box">
+            <!--Tabs Box-->
+            <ul class="tab-buttons clearfix">
+              <li class="tab-btn" data-tab="#tab4"><i class="fas fa-calculator" style="color: rgba(255, 85, 0, 0.986);"></i> MATH</li>
+              <li class="tab-btn active-btn" data-tab="#tab5"><i class="fas fa-flask" style="color: rgba(255, 85, 0, 0.986);"></i> SCIENCE</li>
+              <li class="tab-btn" data-tab="#tab6"><i class="fas fa-language" style="color: rgba(255, 85, 0, 0.986);"></i> ENGLISH</li>
+              <li class="tab-btn" data-tab="#tab6"><i class="fas fa-book-open" style="color: rgba(255, 85, 0, 0.986);"></i> BANGLA</li>
+              <li class="tab-btn" data-tab="#tab6"><i class="fas fa-globe" style="color: rgba(255, 85, 0, 0.986);"></i> SOCIAL SCIENCE</li>
+              <li class="tab-btn" data-tab="#tab6"><i class="fas fa-paint-brush" style="color: rgba(255, 85, 0, 0.986);"></i> SKILL</li>
+          </ul>
+      
+            <div class="tabs-content">
+              <!--Tab-->
+              <div class="tab" id="tab4">
+
+                <h2 class="pt-4" style="color: #0b863c;">SEVENTH GRADE MATH</h2>
+                
+                <p class="pb-4 pt-3" style="color: #545454; font: 13px Verdana, arial, helvetica, clean, sans-serif;">Learner offers hundreds of first grade math skills, lessons, and games to explore and learn! Not sure where to start? Go to your personalized Recommendations wall to find a skill that looks interesting, or select a skill plan that aligns to your textbook, state standards, or standardized test.</p>
+
+                <div class="row">
+
+                <div class="column col-lg-4  col-sm-12">
+
+
+                
+                <!-- <h4 class="pb-4">A. Percents <span class="completed"  style="color: #036803;">Completed</span></h4> -->
+                
+                <h4 class="pb-4">A. Percents</h4>
+                
+
+                <!-- <div class="resume-block">
+                  <div class="inner">
+                    <span class="name">S</span>
+                    <div class="title-box">
+                      <div class="info-box">
+                        <h3>Product Designer</h3>
+                        <span>Spotify Inc.</span>
+                      </div>
+                      <div class="edit-box">
+                        <span class="year">2008 - 2012</span>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div> -->
+
+                <ol class="list-group-numbered">
+                  <li><a class="conlist" href="subjectlist-question.html">What percentage is illustrated?</a></li>
+                  <li><a class="conlist" href="">Convert between percents, fractions, and decimals</a></li>
+                  <li><a class="conlist" href="">Compare percents to fractions and decimals</a></li>
+                  <li><a class="conlist" href=""> Estimate percents of numbers</a></li>
+            
+                </ol>
+                
+
+                
+                </div>
+
+
+
+                <div class="column col-lg-4 col-sm-12">
+
+                  <h4 class="pb-4">B.	Coordinate plane</h4>
+  
+                  <ol class="list-group-numbered">
+                    <li><a class="conlist" href="">Coordinate plane review</a></li>
+                    <li><a class="conlist" href="Math-question-2-1.html">Quadrants and axes</a></li>
+                    <li><a class="conlist" href="">Follow directions on a coordinate plane</a></li>
+                    <li><a class="conlist" href="">Distance between two points</a></li>
+                   
+                  </ol>
+
+                  </div>
+
+
+                  <div class="column col-lg-4  col-sm-12">
+
+                    <h4 class="pb-4">C. Lines and angles</h4>
+    
+                    <ol class="list-group-numbered">
+                      <li><a class="conlist" href="">Name, measure, and classify angles</a></li>
+                      <li><a class="conlist" href="">Lines, line segments, and rays</a></li>
+                      <li><a class="conlist" href="Math-question-3-1.html">Parallel, perpendicular, and intersecting lines</a></li>
+                      <li><a class="conlist" href=""> Identify complementary, supplementary, vertical</a></li>
+                    
+                      
+                    </ol>
+    
+                    </div>
+
+
+                    <div class="column col-lg-4  col-sm-12">
+
+                      <h4 class="pb-4">D. Two-dimensional figures</h4>
+      
+                      <ol class="list-group-numbered">
+                        <li><a class="conlist" href="">Identify and classify polygons</a></li>
+                        <li><a class="conlist" href="">Classify triangles</a></li>
+                        <li><a class="conlist" href="">Triangle inequality</a></li>
+                        <li><a class="conlist" href="Math-question-4-1.html"> Identify trapezoids</a></li>
+                        <li><a class="conlist" href="">Classify quadrilaterals I</a></li>
+                        <li><a class="conlist" href="">Classify quadrilaterals II</a></li>
+                        <li><a class="conlist" href="">Integer inequalities with absolute values</a></li>
+                      </ol>
+      
+                      </div>
+
+
+                      <div class="column col-lg-4  col-sm-12">
+
+                        <h4 class="pb-4">E. Perimeter and area</h4>
+        
+                        <ol class="list-group-numbered">
+                          <li><a class="conlist" href="">Perimeter</a></li>
+                          <li><a class="conlist" href="">	Area of rectangles and parallelograms</a></li>
+                          <li><a class="conlist" href="">Area of triangles and trapezoids</a></li>
+                          <li><a class="conlist" href="">Area and perimeter: word problems</a></li>
+                          <li><a class="conlist" href="Math-question-5-1.html">Circumference of circles</a></li>
+                          <li><a class="conlist" href="">Area of circles</a></li>
+                        
+                        </ol>
+        
+                        </div>
+
+
+                        <div class="column col-lg-4  col-sm-12">
+
+                          <h4 class="pb-4">F. Fractions</h4>
+          
+                          <ol class="list-group-numbered">
+                            <li><a class="conlist" href="">Understanding fractions: word problems</a></li>
+                            <li><a class="conlist" href="">Equivalent fractions</a></li>
+                            <li><a class="conlist" href="">Write fractions in lowest terms</a></li>
+                            <li><a class="conlist" href="">Fractions: word problems with graphs and tables</a></li>
+                            <li><a class="conlist" href="">Least common denominator</a></li>
+                            <li><a class="conlist" href="Math-question-6-1.html">Compare and order fractions</a></li>
+                            
+                          </ol>
+          
+                          </div>
+
+                          
+                </div>
+              
+              
+
+              
+                
+              
+                
+
+              </div>
+      
+              <!--Tab-->
+              <div class="tab active-tab" id="tab5">
+                
+                <div class="row"> 
+              
+                  <div class="content-side col-lg-8 col-md-12 col-sm-12">
+                    
+                    <h2 class="feedback-header p-5">correct...</h2>
+    
+    
+    
+    
+    
+    
+                    <h2 class="mt-5" style="color: #77a200; font: normal 36px Trebuchet MS, sans-serif">Justification</h2>
+                    <blockquote class="explanation mb-5 mt-3">
+                      <div class="math-problem">
+                        <div class="problem-description">
+                          <p>Maya transfers energy to the rope.</p>
+                          <p>The wave carries energy.</p>
+                          <p>These statements are not true.</p>
+                          <p>Each rope moves side to side as the wave moves through it.</p>
+                          <p>As a wave moves through each rope, the rope moves up and down. The rope does not move side to side.</p>
+                          <p>Maya's arm is the medium through which the wave travels.</p>
+                          <p>The wave travels through the rope. So, the rope, not Maya's arm, is the medium through which the wave travels.</p>
+                        </div>
+                        
+    
+                      </div>
+    
+                      
+                    </blockquote>
+    
+                    <div class="row">
+    
+                    <div class="col-lg-10 col-md-12 col-sm-12">
+    
+                      <div class="buttons" style="padding: 5px;">
+                    
+                        <a href="subjectlist-question-three.html"><button type="button" class="theme-btn btn-style-two">Got it</button></a>
+                        
+                      </div>
+    
+    
+                    </div>
+    
+                    <div class="col-lg-2 col-md-12 col-sm-12">
+                        
+                      <div class="buttons" style="padding: 5px;">
+                    
+                        <a href="subjectlist-question-four.html"><button type="button" class="theme-btn btn-style-two">Continue</button></a>
+                        
+                      </div>
+    
+                    </div>
+    
+                  </div>
+    
+                    
+    
+                    
+                  
+    
+                  <!-- <div class="buttons">
+                    
+                    <button type="button" class="theme-btn btn-style-three">Submit</button>
+                    
+                  </div> -->
+    
+                </div>
+    
+                
+    
+    
+                  <!--Sidebar Side-->
+              <div class="sidebar-side col-lg-4 col-md-12 col-sm-12">
+                <aside class="sidebar blog-sidebar">
+    
+    
+                  <!-- Recent Post -->
+                  <div class="sidebar-widget recent-post">
+           
+                    <div class="widget-content1">
+                      <article>
+                        <div class="answered-count">
+                          
+                          <span class="label">Questions Answered</span>
+                        </div>
+    
+                        <div class="answered-count2">
+    
+                          <span class="count" style="margin-left:55px;">02</span>
+                        </div>
+                        
+    
+    
+                        <div class="answered-count1" style="text-align: center;">
+                          
+                          <span class="label" style="text-align: center;">Time</span>
+                        </div>
+                        <div class="time-count">
+                          <div class="timer" id="timer">00:00:00</div>
+                        </div>
+    
+    
+                        <div class="answered-count" style="text-align: center;">
+                          
+                          <span class="label">Attempts</span>
+                        </div>
+    
+                        <div class="answered-count2">
+    
+                          <span class="count" style="margin-left:55px;">00</span>
+                        </div>
+    
+                        
+                        
+    
+                        <!-- <div class="time-count" style="display: flex; align-items: center; justify-content: center; background-color:#ccc">
+                          <img style="height: 35px;" src="images/resource/attempts.png" alt="">
+                          <span class="count" style="margin-left: 5px;">2</span>
+                        </div> -->
+                        
+                        
+                      </article>
+                    </div>
+    
+                    
+              
+                      <!-- Progress bar -->
+                     
+    
+    
+                      <div class="progress-bar1" style="padding: 20px;">
+                        <div class="progress1"><i class="fas fa-times-circle"></i></div>
+                        <div class="progress1"><i class="fas fa-check-circle"></i></div>
+                        
+                        <div class="progress1"></div>
+                        <div class="progress1"></div>
+                        <div class="progress1"></div>
+                      </div>
+    
+                      <!-- <div class="progress-bar1" style="padding: 20px;">
+                        <div class="progress1"><i class="fas fa-check-circle"></i></div> 
+                        <div class="progress1"><i class="fas fa-times-circle"></i></div> 
+                        <div class="progress1"><i class="fas fa-check-circle"></i></div>
+                        <div class="progress1"></div>
+                        <div class="progress1"></div>
+                      </div> -->
+                      
+                    
+    
+    
+      
+                    
+                  </div>
+    
+                </aside>
+              </div>
+    
+            </div>
+            
+              </div>
+      
+              <!--Tab-->
+              <div class="tab" id="tab6">
+
+                <h2 class="pt-4" style="color: #0b863c;">SEVENTH GRADE ENGLISH</h2>
+                
+                <p class="pb-4 pt-3" style="color: #545454; font: 13px Verdana, arial, helvetica, clean, sans-serif;">Learner offers hundreds of first grade math skills, lessons, and games to explore and learn! Not sure where to start? Go to your personalized Recommendations wall to find a skill that looks interesting, or select a skill plan that aligns to your textbook, state standards, or standardized test.</p>
+
+                <div class="row">
+
+                <div class="column col-lg-4  col-sm-12">
+
+                <h4 class="pb-4">A. Analyzing arguments</h4>
+
+                <ol class="list-group-numbered">
+                  <li><a class="conlist" href="english-question-1.html">Trace an argument</a></li>
+    
+            
+                </ol>
+
+                
+                </div>
+
+
+
+                <div class="column col-lg-4 col-sm-12">
+
+                  <h4 class="pb-4">B. Editing and revising</h4>
+  
+                  <ol class="list-group-numbered">
+                    <li><a class="conlist" href="english-question-2.html">Use the correct frequently confused word</a></li>
+                    <li><a class="conlist" href="">Correct errors with frequently confused words</a></li>
+                    <li><a class="conlist" href="">Correct errors with signs</a></li>
+                    <li><a class="conlist" href="">Correct errors in everyday use</a></li>
+                    
+                 
+                  </ol>
+
+                  </div>
+
+                  <div class="column col-lg-4  col-sm-12">
+
+                    <h4 class="pb-4">C. Sentences, fragments, and run-ons</h4>
+    
+                    <ol class="list-group-numbered">
+                      <li><a class="conlist" href="">Is the sentence declarative, interrogative?</a></li>
+                      <li><a class="conlist" href="">Is it a complete sentence or a fragment?</a></li>
+                      <li><a class="conlist" href="">Is it a complete sentence or a run-on?</a></li>
+                      <li><a class="conlist" href=""> Is it a complete sentence, a fragment, or a run-on?</a></li>
+                    
+                    </ol>
+    
+                    </div>
+
+                    <div class="column col-lg-4  col-sm-12">
+
+                      <h4 class="pb-4">D. Formatting</h4>
+      
+                      <ol class="list-group-numbered">
+                        <li><a class="conlist" href="">Formatting titles</a></li>
+                        <li><a class="conlist" href="">Formatting and capitalizing titles: reviews</a></li>
+                        <li><a class="conlist" href="">Formatting street addresses</a></li>
+                        <li><a class="conlist" href="">Formatting quotations and dialogue</a></li>
+                     
+                      </ol>
+      
+                      </div>
+
+              
+
+
+                      <div class="column col-lg-4  col-sm-12">
+
+                        <h4 class="pb-4">E. Misplaced modifiers</h4>
+        
+                        <ol class="list-group-numbered">
+                          <li><a class="conlist" href="">Misplaced modifiers with pictures</a></li>
+                          <li><a class="conlist" href="">Select the misplaced or dangling modifier</a></li>
+                          <li><a class="conlist" href="">Are the modifiers used correctly?</a></li>
+                          
+                        </ol>
+                      
+        
+                        </div>
+
+                     
+
+
+                        <div class="column col-lg-4  col-sm-12">
+
+                          <h4 class="pb-4">F. Reference skills</h4>
+          
+                          <ol class="list-group-numbered">
+                            <li><a class="conlist" href="">Alphabetical order</a></li>
+                            <li><a class="conlist" href="">Use guide words</a></li>
+                            <li><a class="conlist" href="">Use dictionary entries</a></li>
+                            <li><a class="conlist" href="">Use dictionary definitions</a></li>
+                            <li><a class="conlist" href="">Use thesaurus entries</a></li>
+                           
+                          </ol>
+          
+                          </div>
+
+                        
+                          
+                </div>
+               
+
+
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+    <!-- End Job Section -->
+    
+
+
+
+  
+    <!-- Listing Section -->
+    <!-- <section class="ls-section">
+      <div class="auto-container">
+        <div class="filters-backdrop"></div>
+
+        <div class="row">
+          
+          <div class="content-column col-lg-12">
+            <div class="ls-outer">
+             
+
+                    <div class="title-outer pb-4">
+                      <h3 class="text-center">Subject</h3>
+                      <p class="text-center">Step-by-step paths to mastery</p>
+                      
+                    </div>
+                    
+
+              <div class="row">
+                
+                <div class="candidate-block-four col-lg-4 col-md-6 col-sm-12">
+                  <div class="inner-box">
+                    
+                    <div class="image-box">
+                      <figure class="image"><img src="images/resource/news-2.jpg" alt="" /></figure>
+                    </div>
+
+                    <div style="padding: 20px;">
+                    <h3 class="name"><a href="#">Math</a></h3>
+                    <span class="cat">UI Designer</span>
+                    <ul class="job-info">
+                      <li><span class="icon flaticon-map-locator"></span> London, UK</li>
+                      <li><span class="icon flaticon-money"></span> $99 / hour</li>
+                    </ul>
+                    
+                    <a href="#" class="theme-btn btn-style-three">Start</a>
+
+                  </div>
+                  </div>
+                </div> 
+
+
+                
+           
+              <nav class="ls-pagination">
+                <ul>
+                  <li class="prev"><a href="#"><i class="fa fa-arrow-left"></i></a></li>
+                  <li><a href="#">1</a></li>
+                  <li><a href="#" class="current-page">2</a></li>
+                  <li><a href="#">3</a></li>
+                  <li class="next"><a href="#"><i class="fa fa-arrow-right"></i></a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+    <!--End Listing Page Section -->
+
+    
+     <!-- Main Footer -->
+     <footer class="main-footer alternate5">
+      <div class="auto-container">
+        <!--Widgets Section-->
+        <div class="widgets-section">
+          <div class="row">
+            <div class="big-column col-xl-4 col-lg-3 col-md-12">
+              <div class="footer-column about-widget">
+                <div class="logo"><a href="#"><img style="height: 50px;" src="images/logo8.png" alt=""></a></div>
+                <p class="phone-num"><span>Call us </span><a href="thebeehost@support.com">123 456 7890</a></p>
+                <p class="address">Level 6, Islam Tower, 464/H DIT Rd,<br> Dhaka 1219 <br><a href="mailto:support@superio.com" class="email">support@learner.com</a></p>
+              </div>
+            </div>
+
+            <div class="big-column col-xl-8 col-lg-9 col-md-12">
+              <div class="row">
+                <div class="footer-column col-lg-3 col-md-6 col-sm-12">
+                  <div class="footer-widget links-widget">
+                    <h4 class="widget-title">For student</h4>
+                    <div class="widget-content">
+                      <ul class="list">
+                        <li><a href="#">Practice lesson</a></li>
+                        <li><a href="#">Practice MCQ</a></li>
+                        <li><a href="#">Quick MCQ</a></li>
+                        <li><a href="#">Exam</a></li>
+                        
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="footer-column col-lg-3 col-md-6 col-sm-12">
+                  <div class="footer-widget links-widget">
+                    <h4 class="widget-title">What we offer</h4>
+                    <div class="widget-content">
+                      <ul class="list">
+                        <li><a href="#">Math</a></li>
+                        <li><a href="#">Science</a></li>
+                        <li><a href="#">English</a></li>
+                        <li><a href="#">Bangla</a></li>
+                        <li><a href="#">Social Science</a></li>
+                        <li><a href="#">Skill</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="footer-column col-lg-3 col-md-6 col-sm-12">
+                  <div class="footer-widget links-widget">
+                    <h4 class="widget-title">About Us</h4>
+                    <div class="widget-content">
+                      <ul class="list">
+                        
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="footer-column col-lg-3 col-md-6 col-sm-12">
+                  <div class="footer-widget links-widget">
+                    <h4 class="widget-title">Helpful Resources</h4>
+                    <div class="widget-content">
+                      <ul class="list">
+                     
+                        <li><a href="#">Terms of Use</a></li>
+                        <li><a href="#">Privacy Center</a></li>
+                        <li><a href="#">Security Center</a></li>
+                        
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!--Bottom-->
+      <div class="footer-bottom">
+        <div class="auto-container">
+          <div class="outer-box">
+            <div class="copyright-text">© 2021 <a href="#">learner</a>. All Right Reserved.</div>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll To Top -->
+      <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
+    </footer>
+    <!-- End Main Footer -->
+
+
+  </div><!-- End Page Wrapper -->
+
+
+  <div style="background-image: url(images/resource/company-logo/3-1.png);"></div>
+
+  <script>
+    // Function to update the timer every second
+    function updateTimer() {
+      var timerElement = document.getElementById('timer');
+      var startTime = new Date();
+  
+      // Update the timer every second
+      setInterval(function() {
+        var currentTime = new Date();
+        var elapsedTime = new Date(currentTime - startTime);
+        var hours = elapsedTime.getUTCHours();
+        var minutes = elapsedTime.getUTCMinutes();
+        var seconds = elapsedTime.getUTCSeconds();
+        
+        // Add leading zeros if necessary
+        hours = hours < 10 ? '0' + hours : hours;
+        minutes = minutes < 10 ? '0' + minutes : minutes;
+        seconds = seconds < 10 ? '0' + seconds : seconds;
+        
+        // Update the timer display
+        timerElement.textContent = hours + ':' + minutes + ':' + seconds;
+      }, 1000); // Update every second
+    }
+  
+    // Start the timer when the page is loaded
+    window.onload = updateTimer;
+  </script>
+
+  <script src="js/jquery.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/jquery-ui.min.js"></script>
+  <script src="js/chosen.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.fancybox.js"></script>
+  <script src="js/jquery.modal.min.js"></script>
+  <script src="js/mmenu.polyfills.js"></script>
+  <script src="js/mmenu.js"></script>
+  <script src="js/appear.js"></script>
+  <script src="js/ScrollMagic.min.js"></script>
+  <script src="js/rellax.min.js"></script>
+  <script src="js/owl.js"></script>
+  <script src="js/wow.js"></script>
+  <script src="js/script.js"></script>
+  <!-- Maps -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDaaCBm4FEmgKs5cfVrh3JYue3Chj1kJMw"></script>
+  <script src="js/infobox.min.js"></script>
+  <script src="js/markerclusterer.js"></script>
+  <script src="js/maps.js"></script>
+</body>
+
+</html>

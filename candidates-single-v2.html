@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parent Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    /* Add your CSS styles here */
+    .dashboard-container {
+      display: grid;
+      grid-template-columns: 250px 1fr; /* Two columns: 250px for the sidebar and remaining space for content */
+      gap: 20px;
+    }
+
+    .accordion {
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 10px;
+    }
+
+    .accordion-item {
+      margin-bottom: 5px;
+    }
+
+    .accordion-header {
+      cursor: pointer;
+    }
+
+    .accordion-content {
+      display: none;
+      padding: 10px;
+    }
+
+    .accordion-item.active .accordion-content {
+      display: block;
+    }
+
+    .charts-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      border-top: 10px solid #d1bf1b;
+      border-radius: 10px;
+    }
+
+    canvas {
+      width: 100%;
+      height: 200px; /* Set a fixed height for the charts */
+    }
+  </style>
+</head>
+<body>
+
+<div class="dashboard-container">
+  <!-- Sidebar Accordion -->
+  <div class="accordion" id="sidebarAccordion">
+    <div class="accordion-item">
+      <div class="accordion-header">Dashboard</div>
+      <div class="accordion-content">
+        <ul class="navigation">
+          <li class="active"><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="dashboard-company-profile.html">Company Profile</a></li>
+          <li><a href="dashboard-post-job.html">Post a New Job</a></li>
+          <li><a href="dashboard-manage-job.html">Manage Jobs</a></li>
+          <li><a href="dashboard-applicants.html">All Applicants</a></li>
+          <li><a href="dashboard-resumes.html">Shortlisted Resumes</a></li>
+          <li><a href="dashboard-packages.html">Packages</a></li>
+          <li><a href="dashboard-messages.html">Messages</a></li>
+          <li><a href="dashboard-resume-alerts.html">Resume Alerts</a></li>
+          <li><a href="dashboard-change-password.html">Change Password</a></li>
+          <li><a href="dashboard-company-profile.html">View Profile</a></li>
+          <li><a href="index.html">Logout</a></li>
+          <li><a href="index.html">Delete Profile</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header">Analytics</div>
+      <div class="accordion-content">
+        <ul class="navigation">
+          <li><a href="#">Time Spent Learning</a></li>
+          <li><a href="#">Lessons Completed</a></li>
+          <li><a href="#">Study Progress</a></li>
+          <li><a href="#">Answers</a></li>
+          <li><a href="#">Subject Performance</a></li>
+          <li><a href="#">Subject Statistics</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Charts Container -->
+  <div class="charts-container">
+    <div class="card">
+      <h2>Time Spent Learning</h2>
+      <canvas id="timeSpentChart" width="400" height="200"></canvas>
+    </div>
+    <div class="card">
+      <h2>Lessons Completed</h2>
+      <canvas id="lessonsCompletedChart" width="400" height="200"></canvas>
+    </div>
+    <div class="card">
+      <h2>Study Progress</h2>
+      <canvas id="studyProgressChart" width="400" height="200"></canvas>
+    </div>
+    <div class="card">
+      <h2>Answers</h2>
+      <canvas id="answersChart" width="400" height="200"></canvas>
+    </div>
+    <div class="card">
+      <h2>Subject Performance</h2>
+      <canvas id="subjectPerformanceChart" width="400" height="200"></canvas>
+    </div>
+    <div class="card">
+      <h2>Subject Statistics</h2>
+      <table id="subjectStatistics">
+        <thead>
+          <tr>
+            <th>Subject</th>
+            <th>Total Attempts</th>
+            <th>Total Success</th>
+            <th>Total Unsuccessful</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Table body will be populated dynamically -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Add JavaScript code here
+  document.addEventListener('DOMContentLoaded', function() {
+    const accordionItems = document.querySelectorAll('.accordion-item');
+
+    accordionItems.forEach(item => {
+      const header = item.querySelector('.accordion-header');
+
+      header.addEventListener('click', () => {
+        item.classList.toggle('active');
+      });
+    });
+  });
+</script>
+
+<script>
+  // Chart and table initialization code
+  document.addEventListener('DOMContentLoaded', function() {
+    // Sample data for the charts
+    const timeSpentData = {
+      labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+      datasets: [{
+        label: 'Time Spent (minutes)',
+        data: [120, 150, 180, 200],
+        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+        borderColor: 'rgba(255, 99, 132, 1)',
+        borderWidth: 1
+      }]
+    };
+
+    const lessonsCompletedData = {
+      labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+      datasets: [{
+        label: 'Lessons Completed',
+        data: [4, 6, 8, 10],
+        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+        borderColor: 'rgba(54, 162, 235, 1)',
+        borderWidth: 1
+      }]
+    };
+
+    const studyProgressData = {
+      labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+      datasets: [{
+        label: 'Study Progress (%)',
+        data: [25, 50, 75, 100],
+        backgroundColor: 'rgba(153, 102, 255, 0.2)',
+        borderColor: 'rgba(153, 102, 255, 1)',
+        borderWidth: 1
+      }]
+    };
+
+    const answersData = {
+      labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+      datasets: [{
+        label: 'Correct Answers',
+        data: [30, 40, 45, 50],
+        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+        borderColor: 'rgba(75, 192, 192, 1)',
+        borderWidth: 1
+      },
+      {
+        label: 'Wrong Answers',
+        data: [5, 8, 10, 12],
+        backgroundColor: 'rgba(255, 206, 86, 0.2)',
+        borderColor: 'rgba(255, 206, 86, 1)',
+        borderWidth: 1
+      }]
+    };
+
+    const subjectPerformanceData = {
+      labels: ['Math', 'Science', 'English'],
+      datasets: [{
+        label: 'Subject Performance',
+        data: [40, 30, 30], // Sample data percentages, total sum should be 100%
+        backgroundColor: ['#ffcd56', '#36a2eb', '#ff6384'],
+        borderWidth: 1
+      }]
+    };
+
+    // Sample data for the table
+    const subjectStatisticsData = [
+      { subject: 'Math', attempts: 50, success: 40, unsuccessful: 10 },
+      { subject: 'Science', attempts: 60, success: 45, unsuccessful: 15 },
+      { subject: 'English', attempts: 55, success: 35, unsuccessful: 20 }
+    ];
+
+    // Populate the table with data
+    const tableBody = document.querySelector('#subjectStatistics tbody');
+    subjectStatisticsData.forEach(item => {
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>${item.subject}</td>
+        <td>${item.attempts}</td>
+        <td>${item.success}</td>
+        <td>${item.unsuccessful}</td>
+      `;
+      tableBody.appendChild(row);
+    });
+
+    // Initialize charts
+    const timeSpentCtx = document.getElementById('timeSpentChart').getContext('2d');
+    new Chart(timeSpentCtx, {
+      type: 'line',
+      data: timeSpentData
+    });
+
+    const lessonsCompletedCtx = document.getElementById('lessonsCompletedChart').getContext('2d');
+    new Chart(lessonsCompletedCtx, {
+      type: 'bar',
+      data: lessonsCompletedData
+    });
+
+    const studyProgressCtx = document.getElementById('studyProgressChart').getContext('2d');
+    new Chart(studyProgressCtx, {
+      type: 'line',
+      data: studyProgressData
+    });
+
+    const answersCtx = document.getElementById('answersChart').getContext('2d');
+    new Chart(answersCtx, {
+      type: 'bar',
+      data: answersData
+    });
+
+    const subjectPerformanceCtx = document.getElementById('subjectPerformanceChart').getContext('2d');
+    new Chart(subjectPerformanceCtx, {
+      type: 'pie',
+      data: subjectPerformanceData
+    });
+  });
+</script>
+
+</body>
+</html>

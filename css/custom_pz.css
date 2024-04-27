@@ -1,0 +1,104 @@
+.popular-courses .card .card-img {
+    height: 150px;
+    background-position: center;
+    background-size: cover;
+}
+
+/* Borders */
+.popular-courses .col:nth-child(7n-6) .card {
+    border: 2px solid #00a1de;
+}
+
+.popular-courses .col:nth-child(7n-5) .card {
+    border: 2px solid #f90f90;
+}
+
+.popular-courses .col:nth-child(7n-4) .card {
+    border: 2px solid #8576FF;
+}
+
+.popular-courses .col:nth-child(7n-3) .card {
+    border: 2px solid #874CCC;
+}
+
+.popular-courses .col:nth-child(7n-2) .card {
+    border: 2px solid #d74726;
+}
+
+.popular-courses .col:nth-child(7n-1) .card {
+    border: 2px solid #00b971;
+}
+
+.popular-courses .col:nth-child(7n) .card {
+    border: 2px solid #ff9900;
+}
+
+/* Backgrounds */
+.popular-courses .col:nth-child(7n-6) .category-badge {
+    background-color: #00a1de;
+}
+
+.popular-courses .col:nth-child(7n-5) .category-badge {
+    background-color: #f90f90;
+}
+
+.popular-courses .col:nth-child(7n-4) .category-badge {
+    background-color: #8576FF;
+}
+
+.popular-courses .col:nth-child(7n-3) .category-badge {
+    background-color: #874CCC;
+}
+
+.popular-courses .col:nth-child(7n-2) .category-badge {
+    background-color: #d74726;
+}
+
+.popular-courses .col:nth-child(7n-1) .category-badge {
+    background-color: #00b971;
+}
+
+.popular-courses .col:nth-child(7n) .category-badge {
+    background-color: #ff9900;
+}
+
+
+/* Styles for instructor link */
+  .popular-courses .instructor-link {
+    /* Center the content of the link element */
+    display: flex;
+    align-items: center;
+  }
+  
+  .popular-courses .instructor-img {
+    max-width: 40px; /* Adjust size as needed */
+    height: 40px; /* Adjust size as needed */
+    object-fit: cover;
+    border-radius: 50%; /* Make the image round */
+    border: 2px solid gray;
+  }
+  
+  /* Show instructor name on hover */
+  .popular-courses .instructor-link:hover .instructor-name {
+    display: block;
+  }
+  
+  .popular-courses .course-card {
+    max-height: 300px !important;
+  }
+
+  .pagination {
+    display: inline-block;
+  }
+  
+  .pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+  }
+
+  .popular-courses .course-title {
+    color: black;
+  }
+  

@@ -102,3 +102,12 @@ ul.__job-overview li {
     border-radius: 5px;
     padding: 5px;
 }
+
+.__badge {
+    background: #0080001a;
+    border-radius: 25px;
+    display: inline-block;
+    padding: 0px 10px;
+    font-size: 12px;
+
+}

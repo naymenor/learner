@@ -68,6 +68,10 @@ ul.__tags li {
     background: #34a8530f;
 }
 
+.ul-width {
+    max-width: 350px;
+}
+
 ul.__rating {
     font-size: 12px;
 }
